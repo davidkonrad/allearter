@@ -1,0 +1,114 @@
+<style type="text/css">
+#hierarchy-modal {
+	font-family : "courier new", "courier";
+}
+
+.ui-dialog .ui-dialog-titlebar {
+	font-size: 13px;
+	padding: 0px;
+	padding-left: 5px;
+	color: gray;
+}
+.ui-widget-header {
+}
+.ui-dialog .ui-dialog-content {
+	padding: 0px;
+}
+.klas-indent {
+	width: 17px;
+	min-width: 17px;
+	display: block;
+	float: left;
+	clear: none;
+}
+.klas-expand {
+	width: 30px;
+	min-width: 30px;
+	position: relative;
+	top:4px;
+}
+.klas-row {
+	float: left;
+	clear: both;
+	white-space: nowrap;
+}
+.klas-lat {
+	font-style:italic;
+	font-size: 1.2em;
+	color: black;
+	font-family : "courier new", "courier";
+}
+.klas-dan {
+	XXfont-style:italic;
+	margin-left: 7px;
+	color: gray;
+	font-family : "courier new", "courier";
+}
+.klas-active {
+	font-weight: bold;
+}
+a.klas-row-search {
+	text-decoration: none;
+}
+a.klas-row-search:hover {
+	text-decoration: underline;
+}
+
+</style>
+<script type="text/javascript">
+var Hi = {
+	init : function() {
+		$.ajax({
+			url : 'ajax/hierarchy.php',
+			success : function(html) {
+				$("#hierarchy-content").html(html);
+			}
+		});
+	},
+	expand : function(scope, parent, parentName) {
+		var id='#'+parentName;
+		var url='ajax/hierarchy.php?get='+scope+'&parent='+parent+'&base='+parentName;
+		$.ajax({
+			url : url,
+			success : function(html) {
+				$("#hierarchy-content").find(id).find('img').attr('src','images/arrow_minus_icon.png');
+				//
+				var oldclick=$("#hierarchy-content").find(id).find('img').attr('onclick');
+				$("#hierarchy-content").find(id).find('img').removeAttr('onclick');
+				$("#hierarchy-content").find(id).find('img').attr('oldclick', oldclick);
+				$("#hierarchy-content").find(id).find('img').attr('onclick','Hi.collapse("'+parentName+'")');
+				//
+				$("#hierarchy-content").find(id).after(html);
+				$("#hierarchy-content .klas-row").removeClass('klas-active');
+				$("#hierarchy-content").find(id).addClass('klas-active');
+			}
+		});
+	},
+	hierRemove : function(id) {
+		$("#hierarchy-content").find('div').each(function() {
+			if ($(this).attr('parent')==id) {
+				Hi.hierRemove($(this).attr('id'));
+				$(this).remove().empty();
+			}
+		});
+	},
+	collapse : function(id) {
+		Hi.hierRemove(id);
+		var oldclick=$("#hierarchy-content").find('#'+id).find('img').attr('oldclick');
+		$("#hierarchy-content").find('#'+id).find('img').attr('onclick', oldclick);
+	},
+	doSearch : function(scope, searchfor) {
+		var id='#'+searchfor;
+		$("#hierarchy-content .klas-row").removeClass('klas-active');
+		$("#hierarchy-content").find(id).addClass('klas-active');
+		var target=(scope!='Art') ? 'klas_'+scope.toLowerCase() : 'videnskabeligt_navn';
+		Search.hierarchySearch(target, searchfor);
+	}
+};
+
+Hi.init();		
+
+</script>
+
+<div id="hierarchy-content" XXstyle="overflow-x:scroll;"></div>
+

@@ -1,0 +1,16 @@
+
+- footer forsvinder ikke længere
+- rettet fejl med visse "promoer" der ikke blev vist korrekt hvis de indeholdt æøå
+- accepteret / ikke-accepteret på detaljer rettet
+- promo nu fremhævet bedre
+- vag firkant om søgefelt i visse browsere fjernet
+- søgning på taxon kategorier giver ikke længere fejl
+- reference_aar nu uden .00
+- popup-tekster er tilbage under "avanceret søgning"
+- referenceside er rettet, de var grupperet på referencenavn :(
+- har sat link på "total"-iframet. Men de links jeg har fået er de samme? Det er Lotte der står for "mere: Hvor mange arter findes i Danmark?"-linket.
+
+* link til danmarks-edderkopper.dk tilføjet på detaljer (hvis art tilhører artsgruppen Edderkopper)
+det håber jeg er  iorden. 
+
+

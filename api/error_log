@@ -1,0 +1,70 @@
+[26-Mar-2013 23:31:33 Europe/Berlin] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Lost connection to MySQL server at 'reading initial communication packet', system error: 111 in /home/allearte/public_html/common/Db.php on line 34
+[26-Mar-2013 23:31:33 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/allearte/public_html/common/Db.php:34) in /home/allearte/public_html/common/Db.php on line 36
+[26-Mar-2013 23:32:04 Europe/Berlin] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Lost connection to MySQL server at 'reading initial communication packet', system error: 111 in /home/allearte/public_html/common/Db.php on line 34
+[26-Mar-2013 23:32:04 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/allearte/public_html/common/Db.php:34) in /home/allearte/public_html/common/Db.php on line 36
+[26-Mar-2013 23:33:27 Europe/Berlin] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Can't connect to MySQL server on 'db14.meebox.net' (4) in /home/allearte/public_html/common/Db.php on line 34
+[26-Mar-2013 23:33:27 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/allearte/public_html/common/Db.php:34) in /home/allearte/public_html/common/Db.php on line 36
+[26-Mar-2013 23:33:35 Europe/Berlin] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Can't connect to MySQL server on 'db14.meebox.net' (4) in /home/allearte/public_html/common/Db.php on line 34
+[26-Mar-2013 23:33:35 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/allearte/public_html/common/Db.php:34) in /home/allearte/public_html/common/Db.php on line 36
+[26-Mar-2013 23:34:47 Europe/Berlin] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Can't connect to MySQL server on 'db14.meebox.net' (4) in /home/allearte/public_html/common/Db.php on line 34
+[26-Mar-2013 23:34:47 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/allearte/public_html/common/Db.php:34) in /home/allearte/public_html/common/Db.php on line 36
+[01-Apr-2013 19:48:23 Europe/Berlin] PHP Notice:  Undefined variable: row in /home/allearte/public_html/api/Art.php on line 39
+[01-Apr-2013 19:48:23 Europe/Berlin] PHP Notice:  Undefined variable: row in /home/allearte/public_html/api/Art.php on line 39
+[01-Apr-2013 19:48:23 Europe/Berlin] PHP Notice:  Undefined variable: row in /home/allearte/public_html/api/Art.php on line 39
+[01-Apr-2013 19:48:24 Europe/Berlin] PHP Notice:  Undefined variable: row in /home/allearte/public_html/api/Art.php on line 39
+[01-Apr-2013 19:48:24 Europe/Berlin] PHP Notice:  Undefined variable: row in /home/allearte/public_html/api/Art.php on line 39
+[01-Apr-2013 19:48:24 Europe/Berlin] PHP Notice:  Undefined variable: row in /home/allearte/public_html/api/Art.php on line 39
+[01-Apr-2013 19:48:24 Europe/Berlin] PHP Notice:  Undefined variable: row in /home/allearte/public_html/api/Art.php on line 39
+[01-Apr-2013 19:48:25 Europe/Berlin] PHP Notice:  Undefined variable: row in /home/allearte/public_html/api/Art.php on line 39
+[01-Apr-2013 19:48:25 Europe/Berlin] PHP Notice:  Undefined variable: row in /home/allearte/public_html/api/Art.php on line 39
+[01-Apr-2013 19:48:25 Europe/Berlin] PHP Notice:  Undefined variable: row in /home/allearte/public_html/api/Art.php on line 39
+[01-Apr-2013 19:48:25 Europe/Berlin] PHP Notice:  Undefined variable: row in /home/allearte/public_html/api/Art.php on line 39
+[01-Apr-2013 19:48:25 Europe/Berlin] PHP Notice:  Undefined variable: row in /home/allearte/public_html/api/Art.php on line 39
+[01-Apr-2013 19:48:25 Europe/Berlin] PHP Notice:  Undefined variable: row in /home/allearte/public_html/api/Art.php on line 39
+[01-Apr-2013 19:48:26 Europe/Berlin] PHP Notice:  Undefined variable: row in /home/allearte/public_html/api/Art.php on line 39
+[01-Apr-2013 19:49:01 Europe/Berlin] PHP Notice:  Undefined variable: row in /home/allearte/public_html/api/Art.php on line 39
+[01-Apr-2013 19:49:01 Europe/Berlin] PHP Notice:  Undefined variable: row in /home/allearte/public_html/api/Art.php on line 39
+[01-Apr-2013 19:49:01 Europe/Berlin] PHP Notice:  Undefined variable: row in /home/allearte/public_html/api/Art.php on line 39
+[01-Apr-2013 19:49:01 Europe/Berlin] PHP Notice:  Undefined variable: row in /home/allearte/public_html/api/Art.php on line 39
+[01-Apr-2013 19:49:01 Europe/Berlin] PHP Notice:  Undefined variable: row in /home/allearte/public_html/api/Art.php on line 39
+[01-Apr-2013 19:49:01 Europe/Berlin] PHP Notice:  Undefined variable: row in /home/allearte/public_html/api/Art.php on line 39
+[01-Apr-2013 19:49:02 Europe/Berlin] PHP Notice:  Undefined variable: row in /home/allearte/public_html/api/Art.php on line 39
+[01-Apr-2013 19:49:02 Europe/Berlin] PHP Notice:  Undefined variable: row in /home/allearte/public_html/api/Art.php on line 39
+[01-Apr-2013 19:49:02 Europe/Berlin] PHP Notice:  Undefined variable: row in /home/allearte/public_html/api/Art.php on line 39
+[01-Apr-2013 19:49:02 Europe/Berlin] PHP Notice:  Undefined variable: row in /home/allearte/public_html/api/Art.php on line 39
+[01-Apr-2013 19:49:02 Europe/Berlin] PHP Notice:  Undefined variable: row in /home/allearte/public_html/api/Art.php on line 39
+[01-Apr-2013 19:49:02 Europe/Berlin] PHP Notice:  Undefined variable: row in /home/allearte/public_html/api/Art.php on line 39
+[01-Apr-2013 19:49:02 Europe/Berlin] PHP Notice:  Undefined variable: row in /home/allearte/public_html/api/Art.php on line 39
+[10-Apr-2013 13:54:00 Europe/Berlin] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Too many connections in /home/allearte/public_html/common/Db.php on line 34
+[10-Apr-2013 13:54:00 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/allearte/public_html/common/Db.php:34) in /home/allearte/public_html/common/Db.php on line 36
+[10-Apr-2013 14:07:55 Europe/Berlin] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Too many connections in /home/allearte/public_html/common/Db.php on line 34
+[10-Apr-2013 14:07:55 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/allearte/public_html/common/Db.php:34) in /home/allearte/public_html/common/Db.php on line 36
+[11-Apr-2013 12:43:39 Europe/Berlin] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Too many connections in /home/allearte/public_html/common/Db.php on line 34
+[11-Apr-2013 12:43:39 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/allearte/public_html/common/Db.php:34) in /home/allearte/public_html/common/Db.php on line 36
+[11-Apr-2013 12:51:59 Europe/Berlin] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/allearte/public_html/api/Arter.php on line 25
+[11-Apr-2013 13:22:16 Europe/Berlin] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Too many connections in /home/allearte/public_html/common/Db.php on line 34
+[11-Apr-2013 13:22:16 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/allearte/public_html/common/Db.php:34) in /home/allearte/public_html/common/Db.php on line 36
+[11-Apr-2013 13:22:46 Europe/Berlin] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Too many connections in /home/allearte/public_html/common/Db.php on line 34
+[11-Apr-2013 13:22:46 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/allearte/public_html/common/Db.php:34) in /home/allearte/public_html/common/Db.php on line 36
+[11-Apr-2013 13:47:15 Europe/Berlin] PHP Notice:  Undefined variable: result in /home/allearte/public_html/api/Art.php on line 35
+[11-Apr-2013 13:47:15 Europe/Berlin] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, null given in /home/allearte/public_html/api/Art.php on line 35
+[12-Apr-2013 13:56:10 Europe/Berlin] PHP Notice:  Undefined variable: query in /home/allearte/public_html/api/Hierarki.php on line 21
+[15-Apr-2013 14:24:41 Europe/Berlin] PHP Warning:  Missing argument 1 for Referencer::__construct(), called in /home/allearte/public_html/api/index.php on line 44 and defined in /home/allearte/public_html/api/Referencer.php on line 8
+[15-Apr-2013 14:24:41 Europe/Berlin] PHP Notice:  Undefined variable: query in /home/allearte/public_html/api/Referencer.php on line 10
+[16-Apr-2013 18:28:33 Europe/Berlin] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Too many connections in /home/allearte/public_html/common/Db.php on line 34
+[16-Apr-2013 18:28:33 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/allearte/public_html/common/Db.php:34) in /home/allearte/public_html/common/Db.php on line 36
+[16-Apr-2013 18:28:45 Europe/Berlin] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Too many connections in /home/allearte/public_html/common/Db.php on line 34
+[16-Apr-2013 18:28:45 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/allearte/public_html/common/Db.php:34) in /home/allearte/public_html/common/Db.php on line 36
+[16-Apr-2013 18:29:21 Europe/Berlin] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Too many connections in /home/allearte/public_html/common/Db.php on line 34
+[16-Apr-2013 18:29:21 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/allearte/public_html/common/Db.php:34) in /home/allearte/public_html/common/Db.php on line 36
+[16-Apr-2013 18:30:00 Europe/Berlin] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Too many connections in /home/allearte/public_html/common/Db.php on line 34
+[16-Apr-2013 18:30:00 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/allearte/public_html/common/Db.php:34) in /home/allearte/public_html/common/Db.php on line 36
+[16-Apr-2013 18:31:58 Europe/Berlin] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Too many connections in /home/allearte/public_html/common/Db.php on line 34
+[16-Apr-2013 18:31:58 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/allearte/public_html/common/Db.php:34) in /home/allearte/public_html/common/Db.php on line 36
+[16-Apr-2013 18:32:35 Europe/Berlin] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Too many connections in /home/allearte/public_html/common/Db.php on line 34
+[16-Apr-2013 18:32:35 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/allearte/public_html/common/Db.php:34) in /home/allearte/public_html/common/Db.php on line 36
+[20-May-2013 15:13:18 Europe/Berlin] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Host 'web14.meebox.net' is blocked because of many connection errors; unblock with 'mysqladmin flush-hosts' in /home/allearte/public_html/common/Db.php on line 34
+[20-May-2013 15:13:18 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/allearte/public_html/common/Db.php:34) in /home/allearte/public_html/common/Db.php on line 36
+[20-May-2013 15:13:19 Europe/Berlin] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Host 'web14.meebox.net' is blocked because of many connection errors; unblock with 'mysqladmin flush-hosts' in /home/allearte/public_html/common/Db.php on line 34
+[20-May-2013 15:13:19 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/allearte/public_html/common/Db.php:34) in /home/allearte/public_html/common/Db.php on line 36
+[13-Jun-2014 12:12:24 Europe/Berlin] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/allearte/public_html/api/Rige.php on line 23

@@ -1,0 +1,86 @@
+.logo {
+	background-image : url(http://allearter-databasen.dk/images/Bannerbillede.jpg);
+	background-repeat: no-repeat;
+	background-size: 920px 99px;
+	height: 100px;
+}
+/*
+.navbar .nav > li > a {
+	font-size: 30px;
+	color: white;
+	text-shadow: 0 1px 0 black;
+	margin-top: 24px;
+}
+.navbar .nav > li > a:hover {
+	color: lime;
+}
+*/
+
+.logo .nav > li > a {
+	font-size: 30px;
+	color: white;
+	text-shadow: 0 1px 0 black;
+	margin-top: 24px;
+}
+.logo .nav > li > a:hover {
+	color: lime;
+}
+
+
+/*
+dd em {
+	font-size: 105%;
+	XXXborder-bottom: 1px dotted gray;
+	font-style: normal;
+	font-weight: bold;
+	color: darkslategray;
+	font-family : 'courier new', 'courier';
+}
+*/
+dt {
+	color: darkslategray;
+}
+.navbar-inner-top {
+	background-image : none;
+	background-color: white;
+}
+p.lead {
+	line-height: 27px;
+}
+dd.code {
+	margin-left: 30px;
+	font-family: 'courier new',' couruer';
+	padding: 5px;
+	background-color: #ebebeb;
+}
+dd, .alert, p {
+	width: 640px;
+}
+section {
+}
+pre.prettyprint {
+	padding-left: 10px;
+	border:none;
+}
+p small {
+	line-height: 10px;
+}
+code {
+	color: navy;
+	font-family: 'courier new', 'courier';
+	font-size: 14px;
+}
+
+.container-allearter {
+	margin-top: 100px;
+}
+
+.span12 p {
+	width: 924px;
+}
+
+.eksempel {
+	background-color: snow;
+	border: 2px dotted #ebebeb;
+	padding: 16px;
+}

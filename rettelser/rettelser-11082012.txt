@@ -1,0 +1,113 @@
+
+til ære for Christian har jeg nu lavet tabel-filtret casesensitiv, jvr "Lepiota". Dvs fritekstsøgningen
+ser stadig ikke forskel på store og små bogstaver, men man kan filtrere i søgningerne med f.eks stort L
+
+-------------
+usynlige felter er nu
+
+Familie (dk)
+Orden (dk)
+Artsgruppe
+Synonymer
+Synonymer (dk)
+Referencenavn
+Referenceår
+Rererencetekst
+Rødlistestatus
+Fredningsstatus
+Accepteret 
+
+med disse kolonneoverskrifter
+
+
+-------------
+IFT **SAMTLIGE** FELTER 
+Ja, det kan man jo godt. Men, jeg vil så foreslå man gør det til en helt særskilt funktion. 
+Det bliver simpelthen for tungt med de nuv 62 felter, for langt i bredden, en nok relativ
+sjældenhed som vil blive blandet sammen med andre scripts. Så hvad med at man kan tilvælge
+et sted, at man nu gerne vil søge alle kolonner frem, og så viser den resultatet i 
+et nyt vindue/tab for sig selv, uden header, footer, søgefelter osv. Altså resultatet "rent"
+over på sin egen side.
+
+
+-------------
+links i referencetekster er nu igen klikbare og åbner i et nyt vindue/tab.
+
+
+-------------
+forsøgsvis slår jeg arten op på eol.org, hvis den findes (dvs man redirigeres til en detail eller 
+overview-side), tager jeg det første og bedste "artsbillede" og viser på detaljesiden. Prøvede også 
+med at vise alle thumbnails, men det ser lidt gnidret ud. Eol.org redirigerer helt vildt, 2-3 gange, 
+som man ikke ser i en browser. Tror det er muligt at "fange" så man kommer frem til en detail-side hver 
+gang - det er lidt utilfredsstillende den nogle gange lander på en overordnet beskrivelse, dvs artsgruppe
+eller noget i den stil. Nå, men det var også mest for sjov, for at se om det kunne lade sig gøre.
+OBS: Det kører langsomt på serveren, men det er fordi noget der hedder curl ikke er slået til,
+bruger derfor en langsommere teknik.
+
+-------------
+har generelt udvidet felter, jeg ved ikke lige hvad der skulle blive truncated længere
+
+
+-------------
+Ift fejl vedr Rhodophyta, dvs rige->dyreriget->rhodophyta<-planteriget :
+Det skyldes at der er en enkelt art, Porphyra miniata, der (temmelig sikkert) ved en fejl et blevet 
+angivet til at være medlem af dyreriget. Søg efter Porphyra miniata i fritekstsøgning. 
+
+Når man har valgt dyrerige kommer den "korrekt" frem i opslaget, når man så vælger rhodophyta 
+bliver rige ovenover derefter sat korrekt til planteriget. Data for Porphyra miniata ser nemlig sådan ud :
+
+rige	 	rige_dk
+Plantae 	Planteriget
+Plantae 	Dyreriget
+
+I opslag, dansk, står den simpelthen som medlem af dyreriget. 
+
+
+-------------
+"Hjemmehørende arter" er nu "Accepteret (Standard)"
+"Ikke danske arter" er nu "Ikke accepteret"
+"Accepteret" er nu med detaljevisning neden under Dansk navn
+Artsudbredelse åben som standard
+
+
+-------------
+Synonymer er nu med kursiv i detaljevisning. Jeg forstår ikke helt hvad der menes med 
+"Adskil danske og latinske synonymer i detaljevisning", for de er jo adskilt i og med man
+har valgt danske betegnelser eller videnskabelige navne?
+
+Det samme gælder vist også "Danske navne på klassifikations-niveauer i detaljevisning 
+(gerne angivet som i nuværende søgefunktion: Angivet i parantes efter det videnskabelige navn)"
+
+
+-------------
+Har "frisket" layoutet i søgekriterierne lidt op (eller det modsatte). 
+- Overskrifterne er nu mere tydelige som "bokse"
+- Opslag er hvide, ikke fesengrå, det antyder man kan skrive i dem
+- Dummy-tekster er med letvægtsskrift og har mørkere farve
+
+
+-------------
+nu har jeg så inkluderet underorden, overorden, underklasse, overklasse, underraekke, infraklasse,
+infraorden, underfamilie, overfamilie og tribus i dette hersens "multiopslag". De valgte værdier
+bliver gemt som søgefelter, og de vises nedenunder slægt som "+ dit og dat", men hvordan skal de
+egentlig bruges? Skal man kun kunne vælges én ekstra-klassifikation? Vælger man flere kan der hurtigt
+opstå "diskrepans", eller rettere - det vil der uværgerligt opstå indenfor samme ekstra-klassifikation. 
+Det vil også hurtigt opstå mellem ekstra-klassifikationerne, f.eks Overorden : Fisk, Underorden : Muslingskalkrebs.
+Skal de "rigtige" klassifikationsbokse tage ekstra-klassifikationerne i ed? 
+
+Jeg blev helt forvirret. Det man KUNNE bruge det til, var, at man sagde, at nu havde man f.eks valgt 
+Infraorden : Krabber, så blev det et ekstra filter for klassifikationsboksene - opslag blev indsnævnet
+til dette filter.
+
+
+-------------
+Har fjernet de grimme knapper ift forvaltningskategorier. Er nu med en mindre ændring 
+"Optræder på mindst én markeret" / "Optræder på samtlige markerede" (af pladshensyn :-)
+
+
+-------------
+Vis alle-knap er fjernet. Man kan kun søge hvis man har valgt nogle søgekriterier, dvs
+fritekst, artsgruppe, klassifikation, forvaltning eller en taxon-kategori.
+
+
+

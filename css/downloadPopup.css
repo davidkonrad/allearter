@@ -1,0 +1,15 @@
+
+#download-form label {
+	float: left;
+	clear: left;
+	width: 90px;
+	font-size: 14px;
+	padding-top: 4px;
+	line-height: 20px;
+}
+
+.ui-tooltip-title {
+	height: 22px;
+	line-height:22px;
+	font-size: 14px;
+}

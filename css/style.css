@@ -1,0 +1,49 @@
+html, body, h1, h2, h3, h4, div, p, span, div, li {
+	margin: 0px;
+	padding: 0px;
+}
+
+h1, h2, h3, h4, p, small, li {
+	color: #4A4949;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+a:visited {
+	color: #3D239C;
+}
+a:link, a:hover, a:active {
+	color: #165AAD;
+	background-color: transparent;
+}
+a:link, a:visited {
+	text-decoration: none;
+}
+
+textarea {
+	border-left:1px solid #ebebeb;
+	border-top:1px solid #ebebeb;
+	border-right:1px solid #dadada;
+	border-bottom:1px solid #dadada;
+}
+
+label {
+	cursor: pointer;
+}
+
+.divider {
+	float:left;
+	width:100%;
+	clear:both;
+}
+
+sup {
+	float:left;
+	clear: right;
+	width: 100%;
+	line-height:13px;;
+	color: gray;
+	font-family: 'arial';
+
+}
+
+

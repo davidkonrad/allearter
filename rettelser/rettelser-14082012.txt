@@ -1,0 +1,46 @@
+
+- nu skulle underklasse, infraorden osv være på plads. Man kan kun vælge én "ekstra" klassifikation. 
+Vælger man en ny ekstraklassifikation erstatter den en evt tidligere sat. Når man har valgt en ekstraklassifikation
+kan man søge på denne alene. Klassifikationsboksene forholder sig til en evt sat ekstraklassifikation og
+filtrerer efter denne. 
+
+- har sat roedliste til 255 karakterer, noter_status til 1024 karakterer. 
+Husk at det først slår igennem næste gang der laves en import/opdatering! PS, varchar felter
+kan være op til 65535 karakterer, dvs 64kb.
+
+- har lavet en cache / lookup-tabel på arts-billed-opslagene. Først checkes der om billedet allerede har været "scrapet" fra
+eol.org. Hvis det har vises billedet, hvis ikke det har forsøges det at hente billedet, og hvis det lykkes, gemmes billedstien.
+På den måde belastes eol.org mindre, man vil se allerede fremfundne billeder straks - og - ikke mindst, der vil helt naturligt
+langsomt men sikkert blive bygget en "billeddatabase" op for samtlige arter. Hver gang der vises detaljer bidrages der 
+indirekte til at bygge denne database op. På sigt kan man så under administration lave en oversigt, hvor man kan nulstille 
+billeder, f.eks hvis de viser noget forkert eller de famøse "verdenskort", eller aktivt sætte et bestemt billede for en 
+bestemt art (billederne behøves jo ikke komme fra eol, de kan f.eks være Lars egne tæge-billeder)
+
+
+---------------
+
+- begge synonymer på detaljer. "Omvendt" klassifikationsnavn som hint på klassifikationsnavne.
+Accepteret under danske synonymer. Rettet manglende dansk klasse. Har givet referenceteksten sin egen "gruppe"
+så det ikke ser så dumt ud med af mig vilkårlig valgt tekstombrydning.
+
+- Alfabetisk sortering i Artsgrupper (jeg troede det virkede overalt, men det virkede ikke i artsgrupper
+når man skrev noget tekst, så kom de tilfældigt)
+
+- har flyttet søgemodus i ét ord ovenover checkboksene; lagt dem i et fieldset som forsøg, det så
+mindst lige så underligt ud at de blot stod der, øverst.
+
+- Da Accepteret nu er standard, har jeg udvidet det tilfældige opslags kriterier med dette,
+dvs det skal have et dansk navn OG være en accepteret art
+
+- Har lavet en "ren" CSS/HTML dropdown-menu der måske med fordel kan erstatte dette 640-liniers (!!!)
+retro-javascript-uhyre. Se attachments, det er disse filer man kunne sætte ind på de øvrige sider i stedet.
+Denne menu kan Lars sikkert meget nemmere selv rette i, i fald der skal rettes i menuerne. 
+Jeg gætter at grunden til at et link til den gamle søgning ikke optræder i menuen, men omvendt 
+optræder fremhævet på forsiden er, at ingen har orket at rette i javascript-menuen. 
+Det er lavet meget hurtigt så der er nogle småfejl med designet.
+JEG FORESLÅR, i fald menuen skal bruges på andre sider, at man flytter den op så der kun er
+dette 1-2 pixel space mellem menuen og billedet, som der er "mellem de små billeder" på billedet.
+Det ser bedre ud, har kun lavet mellemrummet for at det kan ligne de andre sider layoutmæssigt.
+
+
+

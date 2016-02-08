@@ -1,0 +1,32 @@
+
+- menuen er nu uden unoder (som set i går)
+
+- ved multiopslag bliver musen nu til et "hjul" (progress) når man søger, for at indikere at den faktisk er ved at søge
+(har også flyttet videnskabelige navne/danske navne op øverst)
+
+- autor 512 karakter, synonymer*dk 1024 karakterer.
+
+- uglen er nu sort, og den mindste størrelse hvor man stadig kan se det er en ugle. Den skal måske være sådan lidt grønsort, 
+eller bare lidt mere grå.
+
+- der burde ikke længere være halve ugler, dvs det højre-stillede element med tabel mv overlapper den venstre med søgekriterier. 
+
+- noter_status hedder nu også i databasen Noter_nye_arter, er på 1024 karakterer (selovm det indtil videre kun er "x"). 
+Man kan filtrere efter Noter_nye_arter under "Ekstra funktioner", eller søge på Nye arter alene (søg enables hvis den checkes)
+det giver hos mig med det seneste udtræk 190(?). Ift opdatering, fremadrettet oplyser den om det antal rækker den tror 
+den har sat ind, og det faktiske rækker der findes efter opdateringen, dvs
+----------------------------------
+33359 rækker indsat
+33359 faktiske rækker i tabel
+----------------------------------
+
+- "Meld fejl og mangler" knap under ekstra-funktioner. Prøv at se om den ikke åbner mailprogram, det burde den. Har noget koks med 
+opsætning på min computer, så jeg er ikke helt sikker. 
+
+- Overfamilie er nu også på detaljeside.
+
+- nu **burde** ekstra-klassifikation blive nulstillet korrekt (altså den synlige repræsentation)
+
+
+
+

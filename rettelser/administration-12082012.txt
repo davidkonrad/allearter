@@ -1,0 +1,88 @@
+
+allearter - administration
+
+
+Endelig fik jeg lavet noget administration så Lars Skipper forhåbentlig vil kunne være nogenlunde selvkørende ifb opdateringer. 
+
+Gå til http://192.38.112.80/bif/administration/
+
+Kodeordet er hest (skriv hest og tryk enter)
+
+Og så kommer man direkte hen til det der har med selve databasen at gøre.
+For at undgå unødig kompleksistet og fejl har jeg splittet det op i 
+enkelte "logiske" operationer man kan udføre, men ikke SKAL udføre. 
+
+Funktionerne fra en ende af
+
+1) "Opret backup af allearter-databasen"
+Dette laver slet og ret en kopi af allearter-databasen. Tidligere kopier bliver ikke slettet.
+Kopien får et navn på formen år_måned_dag_time_måned_allearter
+Man kan altså lave alle de backups man vil, men hvis man laver flere backups indenfor
+den samme time overskriver disse backups hinanden.
+
+
+2) "Upload en ny version af allearter-databasen"
+Her kan man oploade et nyt udtræk af allearter-regnearket. Jeg er ganske sikker på 
+der kun kommer problemer med surftown ift større filer (med mindre man kører et 
+eller andet ekstremt dyrt webhotel) så jeg gør ikke noget ved 2mb limit, og forventer derfor
+at CSV-filer der forsøges oploaded er zippede. Forsøger man at oploade større filer end 2mb 
+vil scriptet efter al sandsynlighed fejle, og der vil komme en besked. Når filen er loaded
+op vil den blive forsøgt udpakket straks. Om det er gået godt vil fremgå i beskederne.
+
+Går det godt, og en ny CSV-fil er present, vil den også middelbart fremgå under de funktioner 
+man senere kan benytte for at gøre ting og sager ved den.
+
+Man kan i princippet oploade alle slags filer, det er ikke en fejl at komme
+til at oploade noget forkert - det sker der ikke noget ved, og det er ikke en fejl 
+hvis filen ikke er zipped. 
+
+Det er ikke nødvendigt at CSV-udtrækket er minimeret/kun indeholder de felter vi har.
+Overflødige kolonner ignoreres blot, det eneste der er vigtigt er, at kolonnerne hedder
+det samme som sendt på mail, dvs som i tabellen, og at de alle er tilstede!
+
+
+3) "Test CSV data integritet"
+Denne funktion burde på sigt ikke være nødvendig, men kan være god til at kalibrere dataudtrækkene
+ift konverterings-tabellen. Der testes om 1) den valgte fil faktisk *er* en CSV-fil samt 2) om alle 
+forventede kolonner er tilstede, så en komplet 1:1 konvertering er mulig. 
+
+
+4) "Konverter CSV til allearter-databasen (opdatering)
+Dette aktiverer selve konverteringen. Alle data i den nuværende database slettes og CSV-filens 
+indhold indsættes i stedet. Dette kan tage noget tid, nåske 1 minut, det er svært at sige - men
+man bør vente på at den bliver færdig. Det rapporteres om det er gået godt eller dårligt, hvis
+det er gået godt hvor mange rækker der reelt er indsat. 
+
+
+5) Opdater DK-navne
+Det kører scripts for opdatering af _dk navne der ikke findes. Det kan være nødvendigt efter 
+opdatering med nye data. Der sker ikke noget ved at man ikke kører den, eller kommer til at køre
+den flere gange. 
+
+
+6) "Genskab database ud fra backup"
+Denne funktion erstatter den eksisterende allearter-database (muligvis fordi den er tom/korrumperet)
+med en af de backups der er er lavet i 1)
+
+
+Så, Lars Skipper, en opdatering vil fremadrettet typisk foregå sådan her :
+
+- du laver et CSV-udtræk fra dit Excel-regneark, et regneark hvis kolonner er tilpasset kolonnenavnene som beskrevet.
+
+- du zipper dette csv-udtæk
+
+- du oploader den zippede fil via 2)
+
+- du kan forsikre dig om at indholdet er validt via 3)
+
+- du foretager selve importen via 4)
+
+- du opdaterer danske navne via 5)
+
+
+Jeg håber det lykkes. Der skal nok være noget der går galt, jeg har siddet herfra og opdateret som en
+lyst, men det har jo været de samme filer, felter osv.  Men jeg vil selv bruge denne funktionalitet
+hvis jeg skal opdatere eller andet.
+
+
+

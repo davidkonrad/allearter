@@ -1,0 +1,69 @@
+
+administration
+
+- opdatering af *_dk navne sker nu på samtlige felter, dvs 
+
+Rige_dk
+Raekke_dk
+Underraekke_dk
+Overklasse_dk
+Klasse_dk
+Underklasse_dk
+Infraklasse_dk
+Overorden_dk
+Orden_dk
+Underorden_dk
+Infraorden_dk
+Overfamilie_dk
+Familie_dk
+Underfamilie_dk
+Tribus_dk
+Slaegt_dk
+
+det berettes for hver klassifikations-kategori hvor mange rækker der er blevet opdateret 
+(har fået tildelt det videnskabelige navn)
+
+
+- der er tilføjet en funktion der fjerner "bløde" linieskift i klassfikations-kategorierne. 
+Alle kategorier køres igennem, HVIS der er nogen rækker der er opdateret rapporteres dette.
+
+
+- Har klappet et interface sammen til styring af forsidehistorier 
+(som jeg kalder promoer, for nemheds skyld :-) skulle hedde et eller andet entydigt i 
+tabel osv)
+
+Har taget introduktions-teksterne fra nogle af Lars' sider med tilhørende billeder som
+test-promoer. 
+
+Det er bygget sådan op, at man vælger et felt i databasen der skal søges på,
+ift en søgetekst. F.eks Artsgruppe_dk->Årevinger. Hvis der er felter i vil have med, som jeg
+ikke har i listen skal i sige til. Derudover kan / bør man angive en URL
+til et billede (feltet responderer straks på at man sætter/paster en billedsti ind) og
+naturligvis en tekst. Hvis man sætter en promo til at være "eksklusiv" er det den der vises,
+og ingen andre - kun én promo af gangen kan være eksklusiv. Hvis ikke der er en "eksklusiv"
+vises der en tilfældig blandt dem der er sat som værende "aktive" (det kan give mening at sætte
+en promo inaktiv, hvis det er en sommerart, og det er vinter. t.ex)
+
+Først når man har oprettet og gemt en promo kan man gøre den "aktiv". Det er for ikke at 
+inkludere en evt halvfærdig promo i visninger. 
+
+Ellers burde det nærmest give sig selv. Skal nok løbende forfine / optimere dette, men nu
+er der lavet noget der fungerer, det var det vigtigste.
+
+
+
+NB: CKEditoren har nøjagtig de samme kedelige egenskaber som alle andre editorer, 
+også f.eks word, dvs enter giver et "dobbelt" linieskift etc. 
+
+
+Årevinger (Hymenoptera)
+Indtil videre har j
+Når man går 
+
+
+
+
+
+ 
+
+

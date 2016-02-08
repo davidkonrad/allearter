@@ -1,0 +1,17 @@
+
+- nu virker fritekstsøgning med æøå også i windows / Internet Explorer
+
+
+- det går hurtigt med google, den har allerede indekseret en masse med dansk navn / videnskabelig navn i title.
+Søg f.eks på Agardhs trævlhat, det skal nok gå. Inkluderer nu også synonymer i meta description.
+
+
+- man kan nu redigere "teasere" i administration. Bare én linie, der tages så 3 forskellige og vises 
+til højre for forsidebilledet. Som det visuelt ser ud, er det det bedste jeg kunne finde på, ift restpladsen 
+ude til siden. Jeg går meget ud fra min egen lille bærbarskærm som minimums-reference. Tjekker øvrige
+opløsninger med ctrl -/+.
+
+
+
+
+

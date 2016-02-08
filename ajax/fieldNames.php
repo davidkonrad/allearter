@@ -1,0 +1,8 @@
+<?
+$FIELD_STR = 'Artsgruppe,Artsgruppe_dk,Videnskabeligt_navn,Autor,Dansk_navn,Dansk,Taxonkategori,Taxonstatus,Sortering,Rige,Rige_dk,Raekke,Raekke_dk,Underraekke,Underraekke_dk,Overklasse,Overklasse_dk,Klasse,Klasse_dk,Underklasse,Underklasse_dk,Infraklasse,Infraklasse_dk,Overorden,Overorden_dk,Orden,Orden_dk,Underorden,Underorden_dk,Infraorden,Infraorden_dk,Overfamilie,Overfamilie_dk,Familie,Familie_dk,Underfamilie,Underfamilie_dk,Tribus,Tribus_dk,Slaegt,Slaegt_dk,Synonymer,Synonymer_dk,Referencenavn,Reference_aar,Referencetekst,Noter_systematik,Noter_oekologi,Noter_nye_arter,Den_danske_roedliste,Fredede_arter,Habitatdirektivet,Fuglebeskyttelsesdirektivet,Bern_konventionen,Bonn_konventionen,CITES,Oevrige,NOBANIS_arter,NOBANIS_herkomst,NOBANIS_etableringsstatus,NOBANIS_invasiv_optraeden';
+$NAME_STR = 'Artsgruppe,Artsgruppe (dk),Videnskabeligt navn,Autor,Dansk navn,Accepteret,Taxontype,Taxonstatus,Sortering,Rige,Rige (dk),Række,Række (dk),Underrække,Underrække (dk),Overklasse,Overklasse (dk),Klasse,Klasse (dk),Underklasse,Underklasse (dk),Infraklasse,Infraklasse (dk),Overorden,Overorden (dk),Orden,Orden (dk),Underorden,Underorden (dk),Infraorden,Infraorden (dk),Overfamilie,Overfamilie (dk),Familie,Familie (dk),Underfamilie,Underfamilie (dk),Tribus,Tribus (dk),Slægt,Slægt (dk),Synonymer,Synonymer (dk),Referencenavn,Referenceår,Referencetekst,Noter (systematik),Noter (økologi),Noter (nye arter),Rødlistestatus,Fredningsstatus,Habitatdirektivet,Fuglebeskyttelsesdirektivet,Bern-konventionen,Bonn-konventionen,CITES,Øvrige forvaltningskategorier,NOBANIS-arter,NOBANIS (herkomst),NOBANIS (etableringsstatus),NOBANIS (invasiv optræden)';
+
+$FIELD_ARRAY = explode(',',$FIELD_STR);
+$NAME_ARRAY = explode(',',$NAME_STR);
+
+?>

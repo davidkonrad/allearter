@@ -1,0 +1,99 @@
+
+- "Nye Arter", det er et forslag, kunne man ikke placere det under status?
+
+
+- Gem samtlige kolonner/database-felter som CSV er nu implementeret!!
+Har gjort lidt mere ud af det, med tanke på eksporten fra Access og hvad det monstro skal bruges til.
+Op kommer en dialog-boks hvor man kan definere separator, sortering og filnavn.
+Hvis man klikker "download" gemmes så en CSV med samtlige database-felter for den aktuelle søgning.
+CSV'en virker korrekt på mig, den er faktisk 1:1 ift Lars udtræk hvis jeg downloader alle, den kan læses af Ubuntus regneark.
+Knappen bliver først synlig når man har foretaget en søgning, dvs optræder ikke på forside/promo-søgninger
+(ellers kommer man bare til at downloade alle). Dialogboksen husker tidligere indstilinger. 
+Jeg havde først sat funktionaliteten under "Ekstra Funktioner" men det lykkedes altså at 
+få den på linie med de øvrige eksport-knapper alligevel (tror jeg snakkede om det ude på Zoo).
+
+
+- Har integreret noget manuel justering af kolonnebredde i listevisning. Det er ikke perfekt, man kan ikke skjule
+kolonner totalt på den måde - man kan resize ned til den maksimale ikke-nedbrydelige tekstlængde i en kolonne ift en side,
+men det virker OK til at justere ift en PDF/udskrift, så der ikke kommer dobbeltlinier. 
+
+
+- filtret er nu igen caseinsensitiv, dvs gør ikke forskel på små og store bogstaver
+
+
+- nulstil/reset burde nu fungere fuldt ud (også ift "form" ved start).
+
+
+- overfamilie / referencetekst korrigeret på detaljeside
+
+
+- har opdateret popuptekster jvr mail per 24.08.2012
+
+
+- Jeg kan overhovedet ikke få denne "oprindelige" print-setup til at blive vist. Har den nogen sinde eksisteret? :-)
+
+
+- nu er der "forstørrelse af forsidebillede", dvs hvis man holder musen henover knaldes den op 
+i 770px bredde (ukritisk, ift oprindelig størrelse) - det passer sådan nogen lunde med afstanden
+hen til søgekriterierne fra højre.
+
+
+- har eksperimenteret med sort tekst og store bogstaver, så ser uglen ikke så distinkt ud
+(og overskrifterne er mere tydelige ift det øvrige)
+
+
+- statistik. Gemmer alle søgninger, alle parametre osv med tidsstempel og et id i en log. Alle søgninger kan genskabes 
+"uendeligt" tilbage, det kan bruges til personlig historik via cookies, "gem søgning", statistik, eller t.ex et link
+man kan sende til hinanden (altså fremadrettet, der er mange muligheder) 
+Der laves ikke statistik på forsider eller sitemap, det kan folk bookmarke og det kan følges i Google Analytics.
+
+
+- menu (eller allearter vs standarder) Jeg KAN faktisk godt bruge menuen fra allearter.dk, men det kræver så 
+at jeg ikke bruger nogen doctype, og det er en meget, meget, meget dårlig ikke-løsning - og det bryder så en smule 
+med f.eks detaljesiden. Det er ikke alvorligt, når man på forhånd har lavet tingene "korrekt" bliver det jo ikke 
+ligefrem vist forkert eller holder op med at virke. Men det er en uskik, er så begyndt at tilrette allearter-menuen 
+så den rent faktisk vil virke med en doctype, men det er et større projekt, det er meget vanskelig læsbar kode 
+med en myriade af "ulovlige" værdi-tildelinger osv. Så jeg har bibeholdt den "nye" menu. 
+
+Men jeg tænker, på et eller andet tidspunkt skal dette frontpage / ikke standardiserede website vel alligevel udfases. 
+Jeg vil meget gerne for min egen forbøjelses skyld sidde og bygge en drupal-ækvivalent til allearter.dk op herhjemme. 
+Det er ikke noget kæmpeprojekt (meget mindre end søgningen), det er at lave skabelonen, installere relevante moduler, 
+sætte rettigheder / brugere op og så køre alle siderne der ligger på surftown ind. Der er en masse umiddelbare 
+fordele ved at træde ind i 21 århundrede på den måde :
+
+	- mange brugere med differentieret brugeradgang
+	- forum-muligheder på alle elementer såsom artikler eller billeder
+	- nemmere administration af artikler, deres placering f.eks hvem der må læse dem
+	- nemmere administration af forside og kategorisider, det er mere avis-agtigt,
+	  t.ex skriver man en ny artikel, og "forfremmer" den så til at blive vist på forsiden 
+          med den første del af teksten, et billede og "læs mere"
+	- nemmere oprettelse af artikler, inkl versionsstyring
+	- bedre linkning mellem artikler via (tro det eller lad være) taksonomi-opdelinger
+
+	  (Nogle tilknyttet EOL har faktisk hjulpet med forbedring af Drupals taksonomi-halløj
+	  http://christchurch2008.drupalsouth.net.nz/session/something-about-drupal
+	  Der er lavet et Drupal-modul så en "lokal" hjemmeside kan være "taxonomy"-server for EOL, 
+	  men hvordan det konkret virker ved jeg ikke http://www.youtube.com/watch?v=6NwfGA4cxJQ
+	  Når jeg skriver "taksonomi" er det en Drupal-opdeling (fremfor "tags") der minder om "rigtig" taksonomi)
+
+	- integreret søgning på indhold, f.eks også en intern beskrivelse af et billede
+	- integreret print, RSS feeds og den slags
+	- billed-administration inde i CMS'et
+	- bedre mulighed for at lave version til håndholdte enheder
+	- nemmere at skifte layout / skabelon, eller udvide med andre sprog
+	- nemmere integration med et hav af services, og på sigt nok mere enkel integration 
+	  med andre sites fra/til allearter, tænker på fugleognatur og sådan noget
+	- nemmere at få andre til at rette i, hvis de er drupalister, det er et kendt system.
+
+
+
+Ensretning af menu på søgeside og de øvrige sider
+Modul til søgeeksempler - Justering af layout på forsidehistorier
+Printfunktion: Oprindelige printindstillinger, printknap
+Databasefelter i forside-admin: Familie og orden - Felter med videnskabelige navne i stedet for danske
+EOL-opslag (rammer slægt og ikke art for visse arter)
+Mulighed for Boolske operatorer i fritekstsøgning (standard nu er søgning overalt)
+Kan Filtrering begrænses til synlige kolonner ? (hvilket muliggør filtreringer á la: alle biller rødlistet som VU)
+Autojustering af "Vis kolonner" efter indhold
+Ekstrafunktioner: Sortering, case-sensitiv søgning m.v.
+

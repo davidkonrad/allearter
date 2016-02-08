@@ -1,0 +1,87 @@
+<html>
+<head>
+<style>
+
+.menu { height:24px; position:relative; z-index:100;background-color:teal;color:white; font-family: helvetica; }
+.menu ul {padding:0;margin:0;list-style-type:none;}
+.menu li {float:left;width:auto; padding-left:6px; padding-right:6px; line-height:24px; position:relative;}
+.menu ul li a { font-size:14px; }
+.menu ul li:hover { background: #006666; }
+
+.menu ul li ul li a { font-size:13px; }
+.menu a, .menu a:visited {display:block; font-size:15px; text-decoration:none; color:#fff; height:24px; border:1px; padding-left:6px; padding-right: 6px;}
+.menu ul ul { visibility:hidden; position:absolute; height:0; top:20px; left:0; width:150px; }
+.menu ul ul li { background:teal; width:150px; text-align:left; padding-top:5px; padding-bottom:5px; }
+.menu ul ul li:hover { background: #006666; }
+
+.menu ul ul ul { visibility:hidden; position:absolute; height:0; top:0; left:150px; width:150px; }
+.menu ul ul ul li { background:teal; width:150px; text-align:left; padding-top:5px; padding-bottom:5px; }
+.menu ul ul ul li:hover { background: #006666; }
+
+.menu table {position:absolute; top:0; left:0; border-collapse:collapse;} /* style the table so that it takes no ppart in the layout - required for IE to work */
+.menu ul ul a, .menu ul ul a:visited, .menu ul ul ul a, .menu ul ul ul a:visited { color:#fff; height:22px;}
+.menu a:hover, .menu ul ul li:hover { }
+.menu :hover > a, .menu ul ul :hover > a, .menu ul ul ul :hover > a {}
+
+.menu ul li:hover > ul,
+.menu ul a:hover ul,
+.menu ul ul li:hover ul { visibility:visible; }
+
+</style>
+</head>
+<body>
+
+
+<div class="menu">
+<ul>
+	<li><a href="http://allearter.dk/index.htm">Hjem</a></li>
+	<li><a href="#">Om <b>allearter.dk</b></a>
+		<ul>
+			<li><a href="http://allearter.dk/introduktion.htm">Introduktion</a></li>
+			<li><a href="http://allearter.dk/database.htm">Database</a></li>
+			<li><a href="#">Navngivning</a>
+				<ul>
+					<li><a href="http://allearter.dk/videnskabelige-navne.htm">Videnskabelige navne</a></li>
+					<li><a href="http://allearter.dk/danske-navne.htm">Danske navne</a></li>
+					<li><a href="http://allearter.dk/synonymer.htm">Synonymer</a></li>
+				</ul>
+			</li>
+			<li><a href="http://allearter.dk/systematik.htm">Systematik</a></li>
+			<li><a href="http://allearter.dk/hjaelp.htm">Hj&aelig;lp os !</a></li>
+		</ul>
+	</li>
+	<li><a href="http://allearter.dk/#">Artsgrupper</a>
+		<ul>
+			<li><a href="http://allearter.dk/artsgrupper-generelt.htm">Generelt</a></li>
+			<li><a href="#">Dyreriget</a>
+				<ul>
+					<li><a href="http://allearter.dk/artsgrupper-hvirveldyr.htm">Hvirveldyr</a></li>
+					<li><a href="http://allearter.dk/artsgrupper-insekter.htm">Insekter m.fl.</a></li>
+					<li><a href="http://allearter.dk/artsgrupper-spindlere.htm">Spindlere</a></li>
+					<li><a href="http://allearter.dk/artsgrupper-krebsdyr.htm">Krebsdyr</a></li>
+					<li><a href="http://allearter.dk/artsgrupper-bloeddyr.htm">Bl&oslash;ddyr</a></li>
+					<li><a href="http://allearter.dk/artsgrupper-oevrige-dyr.htm">&Oslash;vrige dyr</a></li>
+				</ul>
+			</li>
+			<li><a href="http://allearter.dk/artsgrupper-planteriget.htm">Planteriget</a></li>
+			<li><a href="http://allearter.dk/artsgrupper-svamperiget.htm">Svamperiget</a></li>
+			<li><a href="http://allearter.dk/artsgrupper-chromista.htm">Riget Chromista</a></li>
+			<li><a href="http://allearter.dk/artsgrupper-protozoriget.htm">Protozoriget</a></li>
+			<li><a href="http://allearter.dk/artsgrupper-oversigt.htm">Samlet oversigt</a></li>
+		</ul>
+	</li>
+	<li><a href="#">Nyheder</a>
+		<ul>
+			<li><a href="http://allearter.dk/nyheder-arter.htm">Arter & artsgrupper</a></li>
+			<li><a href="http://allearter.dk/nyheder-oevrige.htm">&Oslash;vrige nyheder</a></li>
+		</ul>
+	</li>
+	<li><a href="http://allearter.dk/referencer.htm">Referencer</a></li>
+	<li><a href="http://allearter.dk/links.htm">Links</a></li>
+	<li><a href="http://allearter.dk/download.htm">Download</a></li>
+	<li><a href="http://allearter.dk/kontakt.htm">Kontakt</a></li>
+</ul>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+.container {
+	padding: 10px;
+	padding-bottom: 0px;
+	top: -10px;
+	position: relative;
+}
+.container label {
+	clear:both;
+	float: left;
+	color: #4A4949;
+}
+.container label.right {
+	clear:none;
+	float: none;
+	cursor: pointer;
+	font-size: 13px;
+	position: relative;
+	top:-2px;
+}
+th.sorting_asc, th.sorting_desc {
+	background-color: #165AAD;
+	color: white;
+	cursor:pointer;
+	vertical-align: top;
+}
+th.sorting {
+	background-color: #ebebeb;
+	cursor:pointer;
+	vertical-align: top;
+}
+
+table#search-result {
+	border-collapse : collapse;
+	float:left;
+	clear: both;
+}
+
+table#search-result td {
+	background-color: white;
+	padding-bottom: 4px;
+	padding-left:3px;
+	border-bottom:1px solid #ebebeb;
+	color: darkslategray;
+}
+
+table#search-result td.details {
+	cursor: pointer;
+	color: #165AAD;
+	border:1px solid #dadada;
+	background-color: #ebebeb;
+	border-bottom:1px solid #ebebeb;
+	font-style: italic;
+	overflow-y : auto;
+}
+
+.buttonpanel {
+	text-align:center;
+	margin-bottom: 10px;
+}
+
+table#search-result th {
+	vertical-align: top;
+	font-weight: bold;
+	text-align: left;
+	font-size: 13px;
+}
+
+img.load {
+	position: absolute;
+	top: 300px;
+	left: 45%;
+	width: 100px;
+	margin-top: -33px;
+}
+
+.dataTables_filter {
+	position: relative;
+	float:right;
+	width:300px;
+}
+
+.dataTables_wrapper {
+	float: none;
+	overflow: visible;
+	clear: none;
+}
+
+label.disable {
+	color: #dadada;
+}
+
+input[type=text] {
+	padding: 4px;
+	border: 1px solid #aaa;
+	font-size: 13px;
+}
+
+#search-result_paginate a {
+	margin-right: 5px;
+}
+
+.DTTT_button {
+	width: 55px;
+}
+
+#forvl_mode {
+	clear:both;
+	font-size:10px;
+	margin: 0px;
+	padding:0px;
+}
+
+#extra-klassifikation {
+	width: 230px;
+	margin-top: 4px;
+	margin-bottom:4px;
+	clear: both;
+	float: left;
+	font-size: 13px;
+	font-weight: bold;
+	color: darkslategray;
+	padding: 4px;
+}
+
+.placeholder {
+	margin: 0;
+	padding: 0.3em;
+	font-size: 1em;
+	font-weight: normal;
+	color: #999;
+}
+
+.watermark {
+	margin: 0;
+	padding: 0.3em;
+	font-size: 1em;
+	font-weight: normal;
+	color: #999;
+}
+
+/* due to new promo layout */
+#search-result_wrapper {
+	float:left;
+	clear: both;
+}
+
+.promo {
+	width: 913px;
+	clear: both;
+	float: left;
+	display: block;
+	margin-bottom: 20px;
+	background-color: #e6e6e6;
+	padding: 16px;
+	font-size: 130%;
+}
+#fritext {
+	padding-top: 3px;
+	margin-bottom: 4px;
+	width: 235px;
+	outline: 0;
+}
+
+.klassifikation-hierarchy {
+	-webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);  
+	-moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);  
+}

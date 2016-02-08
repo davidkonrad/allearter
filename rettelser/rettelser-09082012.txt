@@ -1,0 +1,27 @@
+
+
+- der er nu autoudfyld på klassifikations-boksene. Fremsøger man noget i én af boksene 
+udfyldes overliggende bokse rekursivt. Omvendt, hvis man nulstiller en boks, f.eks klikker,
+nulstilles underliggende bokse også. 
+
+Det fungerer selvom man først f-eks har valgt Dyreriget->leddyr, da er valgmulighederne i 
+slægt begrænset til disse områder, vælger man så noget i slægt, f.eks glansbier, udfyldes de
+mellemlignende bokse med hhv vejbier->årevinger->insekter opadgående.
+
+Det virker også med "multiopslaget", søger man på "guldsm", vælger "guldmede" kommer der
+dyreriget->leddyr->insekter->guldsmede. 
+
+Jeg synes det er morsomt at se klassifikationerne blive udfyldt automatisk. I må sige til 
+hvis det går langsomt, burde have minimeret evt overhead (den skal jo ikke stå og kalde serveren
+uophørligt, kun når der er en reel ændring)
+
+- har sat toppen af allearter.dk på, minus menu.
+
+- har genkonverteret da også økologi, systematik og fredede arter -felterne som med autor var 
+beskåret. Den nuværenede importfil fylder i øvrigt 12.8mb, så MÅSKE skal man kunne importere 
+i portioner, evt kan man gøre noget med at importere den zipped (så fylder den nemlig kun 817kb, og 
+det er ikke noget problem at pakke en zip ud på et webhotel, går jeg ud fra, nok kun ift memory
+limit.
+
+
+

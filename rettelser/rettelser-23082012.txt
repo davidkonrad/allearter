@@ -1,0 +1,48 @@
+
+Surftown.
+
+Noget af en kedelig oplevelse :-(
+
+- det lykkedes fint at oprette en mysql-database
+
+- efter længere tids ærgrelser (over afbrudte forbindelser, ufattelig langsom FTP) 
+fandt jeg ud af, at det jo et er såkaldt "Advanced Windows"-webhotel, hvor man skal
+bruge FTP til anderledes. Så fik jeg loadede filerne op, og sat rettigheder. 
+
+- desværre viser det sog så at surftown ikke understøtter PHP. Troede først det kunne
+fikses via "Webservice" og "mappeindex" fra dette hersens kontrolpanel,
+men det er helt lukket af. Det er ikke fordi der er noget i vejen med stien
+allearter.dk/soeg skulle gerne have virket, men den nægter simpelthen - 
+allearter.dk/soeg/test.html virker derimod fint. 
+
+Der er vist ingen mulighed for at få understøttet PHP på webhotellet overhovedet!
+Se https://surftown.dk/support/hvilket-webhotel-skal-jeg-vaelge-linux-eller-windows
+og https://surftown.dk/support/hvordan-skifter-jeg-servertype-fra-linux-til-windows-eller-omvendt
+Flere steder skriver de, at der slet ikke understøttes PHP på windows-webhoteller
+
+Det er noget mærkelig inkonsekvent noget, for mySQL'en kører med sikkerhed på linux,
+og man har jo ligefrem også en PHPMyAdmin på windows-webhotellerne. 
+
+Og det virker til at være noget af en proces at skifte, dvs det tager et stykke tid,
+og skal gøres via et helt nyt webhotel. Jeg tror ikke Lars bruger nogle specielle
+frontpage-udvidelser eller ASP, så det kan jo nok lade sig gøre smertefrit,
+men det kan meget usandsynligt nåes til i morgen :-( [jeres møde]. Først skal
+man bestille webhotel, så skal man aktivt flytte domænerne, så skal man vente på at surftown
+rent faktisk flytter domænerne, så skal man flytte alt indholdet fra det gamle (man har
+backuppet) over på det nye.
+
+I øvrigt er MySQL'en begrænset til 50 mb - så er der kun plads til 1 database-backup. 
+
+Så, tja - jeg fik rettet en masse af de fejl vi aftalte i går, men de skulle jo gerne være 
+kørt på det nye, må så opdatere det gamle når jeg kommer hjem. Fik også rettet menuen, 
+den er da med her som attachment, og den kan vi jo sætte ind, og så tilføje et menupunkt 
+der peger hen på "den gamle" søgeside, dvs 192.38.112.80, indtil videre - i hvert fald så 
+andre kan se det. 
+
+
+- har ryddet op i menuen (se attachments, det er disse filer der kan indsættes på frontpage-templaten)
+
+- ved multiopslag bliver musen nu til et "hjul" (progress) når man søger, for at indikere at den faktisk er ved at søge
+(har også flyttet videnskabelige navne/danske navne op øverst)
+
+

@@ -1,0 +1,24 @@
+.menu { height:24px; position:relative; z-index:100;background-color:teal;color:white; font-family: helvetica; width:920px; }
+.menu ul {padding:0;margin:0;list-style-type:none;}
+.menu li {float:left;width:auto; padding-left:6px; padding-right:6px; line-height:24px; position:relative;}
+.menu ul li a { font-size:14px; }
+.menu ul li:hover { background: #006666; }
+
+.menu ul li ul li a { font-size:13px; }
+.menu a, .menu a:visited {display:block; font-size:15px; text-decoration:none; color:#fff; height:24px; border:1px; padding-left:6px; padding-right: 6px;}
+.menu ul ul { visibility:hidden; position:absolute; height:0; top:20px; left:0; width:150px; }
+.menu ul ul li { background:teal; width:150px; text-align:left; padding-top:5px; padding-bottom:5px; }
+.menu ul ul li:hover { background: #006666; }
+
+.menu ul ul ul { visibility:hidden; position:absolute; height:0; top:0; left:150px; width:150px; }
+.menu ul ul ul li { background:teal; width:150px; text-align:left; padding-top:5px; padding-bottom:5px; }
+.menu ul ul ul li:hover { background: #006666; }
+
+.menu table {position:absolute; top:0; left:0; border-collapse:collapse;} /* style the table so that it takes no ppart in the layout - required for IE to work */
+.menu ul ul a, .menu ul ul a:visited, .menu ul ul ul a, .menu ul ul ul a:visited { color:#fff; height:22px;}
+.menu a:hover, .menu ul ul li:hover { }
+.menu :hover > a, .menu ul ul :hover > a, .menu ul ul ul :hover > a {}
+
+.menu ul li:hover > ul,
+.menu ul a:hover ul,
+.menu ul ul li:hover ul { visibility:visible; }

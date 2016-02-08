@@ -1,0 +1,31 @@
+
+- endelig er popupteksterne kommet rigtigt på. Setuppet skulle ændres en smule.
+Man kommer "væk" fra en popup ved at vise en ny popup, fjerne musen fra popupbilledet (med svagt delay)
+eller klikke uden for selve popup-vinduet (så nu kan man klikke på links)
+
+Jeg kan ikke lige finde det originale uglebillede. Det må jo gerne være lidt større 
+og sort (og transparent) - når jeg får fat i det skifter jeg dette ud og gør overskrifterne
+lidt højere. Det er en rigtig fin ugle, bliver mere glad for den desto mere jeg ser den - 
+det er synd hvis den ikke kommer til sin ret.
+
+
+- "grå felter" (boksene ikke fyldes helt ud) burde nu være elimineret
+
+
+- har for sjov (nu var jeg inspireret) lavet et sitemap der kan findes i footeren "Sitemap - oversigt over alle arter"
+Det er bare for at have et link på siden søgemaskinerne kan følge. Meningen er, at f.eks google kan indeksere alle arter 
+ift allearter.dk, så man kan "ramme" allearter.dk ved at google et dansk navn eller et taksonomisk navn 
+(videnskabeligt navn). Som bonus kan man nu lave et direkte link til en art. 
+Allearter.dk?taksonomi=videnskabeligt_navn (allearter.dk eller hvor det nu ligger) 
+eg allearter.dk?taksonomi=Somateria+mollissima. Det er muligt man skal dobbeltlinke til et dansk navn også,
+men jeg venter spændt på når det er online og ser hvordan google spiser det.
+
+Apropos, er "ederfugl" ikke med to d'er, dvs edderfugl? Der er/var en hulens masse af dem ved Christiansø, så 
+de var helt almindelige omkring Bornholm, har engang fanget én med fiskestang - vi skrev dem altid med to d'er.
+
+
+- Jeg kan ikke reproducere Isabels fejl ift overorden, underfamilie osv. Jeg synes den gør det rigtigt, men jeg
+har glemt pointen. Skal nok se eksemplet igen. Synes den nulstiller korrekt når man vælger en ny klassifikation,
+og sorterer korrekt ift klassifikations-boksene. 
+
+

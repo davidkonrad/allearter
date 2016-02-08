@@ -1,0 +1,71 @@
+
+
+- videnskabelige navne / latin-græsk er nu med kursiv, på detaljer og i oversigt. 
+
+- ikkefunktionel boks "Ændringer" fjernet
+
+- slægt er nu tilføjet under klassifikation, også inkluderet i multiopslag, eg "søg i alle klassifikations-kategorier"
+
+- info ift fredede arter vises nu korrekt
+
+- "sprog" vises nu i sin egen "toiletrulle", den er lukket som udgangspunkt, default er nu videnskabelige navne. 
+Teksterne er nu hhv "Danske betegnelser" og "Videnskabelige navne"
+
+- har rettet beskåret 20-karakter-felt ift Autor
+
+- Artsgruppe er nu artsgruppe og artsgruppe_dk, videnskabeligt navn smidt ud til højre som individuelt søgefelt.
+(mon ikke man bør nulstille artsgruppe hvis artsgruppedk sættes og vice versa?)
+
+- Hjemmehørende arter, ikke danske arter nu under klassifikation (ift feltet "Dansk")
+De er begge checked som default. Man kan checke begge men ikke afchecke begge, dvs mindst en skal være checked.
+
+- "Tekst til infoknapper" : Jeg har virkelig mokket rundt for at finde på noget der virkede "elegant". 
+Uanset hvordan synes jeg det ser dumt ud med et ikon i søgecontainernes overskrift, om det er til 
+højre, venstre før +/- osv. Så i stedet popper teksterne op når man holder musen over overskrifterne. 
+Hvis i insisterer kan man godt lave en "knap". Flere af teksterne mangler som bekendt og er måske lidt misvisende,
+f.eks er der jo ikke AND/OR/+/- i fritekst. Har kun sat på artsgruppe og forvaltningskategorier, 
+resten "beskrivelse skal defineres"
+
+- farver på "toiletruller", knappen på allearter.dk er jo et billede. Forsøgsvis har jeg taget en bid af knappen 
+og repeterer baggrunden horisontalt på fritekstsøgning med sortgrå skrift (jeg ved godt plus/minus stadig er hvid, det er faktisk
+billeder). På Sprog har jeg sat teal farve som allearters menu med hvid skrift. Resten har jeg ladet stå. 
+Det kan man jo eksperimentere med ud i det uendelige, jeg er meget dårlig til design, så i må bare sige hvordan i vil have det. 
+
+- forvirring/forventningsuenighed vedr og/eller ved søgning i forvaltningskategorier. Under kategorierne har
+jeg sat to "knapper", "søge modus", der kan være ELLER / OG. Hvis ELLER er trykket ned er søgningerne iblandt
+forvaltningskategorier forvaltning1 ELLER forvaltning2 ELLER forvaltning3 osv, ved OG er det 
+forvaltning1 OG forvaltning2 OG forvaltning3. 
+
+- fritekstsøgning. "Samtlige navne" er nu "alle navne", "alle felter" er "samtlige felter". 
+
+  * kun arter, artsgruppe inkluderes ikke længere, så nu søges der på Videnskabeligt_navn,Dansk_navn,Synonymer,Synonymer_dk
+
+  * samtlige navne, videnskabeligt_navn, dansk_navn, synonymer, synonymer_dk, artsgruppe, artsgruppe_dk er føjet til
+    søgningen, så nu søges der i Rige,Rige_dk,Raekke,Raekke_dk,Underraekke,Underraekke_dk,
+    Overklasse,Overklasse_dk,Klasse,Klasse_dk,Underklasse,Underklasse_dk,Infraklasse,Infraklasse_dk,Overorden,Overorden_dk,
+    Orden,Orden_dk,Underorden,Underorden_dk,Infraorden,Infraorden_dk,Overfamilie,Overfamilie_dk,Familie,Familie_dk,Underfamilie,
+    Underfamilie_dk,Tribus,Tribus_dk,Slaegt,Slaegt_dk, Videnskabeligt_navn, Dansk_navn, Synonymer, Synonymer_dk, Artsgruppe, 
+    Artsgruppe_dk 
+
+  * søgning på "samtlige felter" er nu enabled/implementeret. ID tager jeg altså ikke med, det er for pjattet.
+
+- har tilføjet et link på detaljerne der hedder "Se arten på Encyclopedia of Life". Det er jo helt chokerende at erfare
+at praktisk talt ingen opslag går i ged, de har virkelig meget med. Encyclopedia of Life laver en søgning og redirigerer 
+så til en artsside, men kan også finde på at dirigere til en oversigt over søgeresultater (når det er en "populær" 
+eller almen kendt art med mange data). Jeg skal finde ud af om jeg kan overstyre resultaterne fra eol.org, altså 
+så man altid når artssiden, for så kan man jo slet og ret vise billederne for arten på detaljesiden (ved at loade siden 
+og scrape dem) det er i høj grad teknisk muligt, det er blot det med at der er undtagelser jeg grubler over, hvis man 
+laver funktionen må det gerne fungere 99.9%, ikke bare f.eks 90% - de bruger desværre nogle interne ID'er vi ikke har 
+(ligesom allearter har sine egne ID'er). Alternativt kan man nøjes med denne funktion når man får et hit direkte til 
+deres detaljeside, det er i de fleste tilfælde. Man kan i princippet også stjæle deres tekst og billeder og vise det som popup.
+
+- ift manglende danske /_dk vs ikke-danske i klassifikation. Det var piece of cake at lave søgningerne såden tager
+det videnskabelige navn når der ikke er defineret et dansk navn, og tilmed sorterer dem bagefter. Jeg fik bare problemer 
+efterfølgende, fordi søgningen jo så skal vide at nu søger man faktisk på det videnskabelige navn og ikke danske navn, selvom man 
+søger danske navne frem. Det kræver lige en omorganisering af strukturen, og det orker jeg ikke nu, det bliver i morgen, så
+jeg har sat den tilbage til de gamle ukomplette opslag.
+
+
+Nu vil jeg se Dexter. Har overhovedet ikke fået kigget på PDF, print og CSV (sorry Lotte), men det kommer nok.
+
+

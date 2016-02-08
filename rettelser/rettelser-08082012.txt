@@ -1,0 +1,22 @@
+
+- danske felter i familie, klasse, slaegt, raekke, orden har fået videnskabelige navne hvis ikke de er sat. 
+Nogle er så blevet "UAFKLARET", det skal vel ikke være der? Det er nok nemmest/sikrest at køre som et updatescript
+efter man har konverteret data ind.
+
+- ved dansk sorteres felterne nu korrekt ift ÆØÅ (også artsgruppe)
+
+- Artsgrupper er nu Videnskabelig/Dansk
+
+- sprog nu under klassifikation
+
+- hjemmehørende/ikke dansk under sin egen kategori "Artsudbredelse" (af mangel på bedre udtryk)
+
+- Excel er tilbage (ved ikke om det virker med excel)
+
+- synlige kolonner er nu videnskabeligt navn, autor, dansk navn, familie, orden, artsgruppe dk
+synonymer, synonymer_dk og dansk er nye usynlige kolonner
+
+- enter på fritekst aktiverer søgning (hvis der er skrevet noget)
+
+
+

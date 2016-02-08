@@ -1,0 +1,31 @@
+
+
+* nobanis sektion fjernet
+Jeg HAR i øvrigt en nobanis-liste, Nobanis_taxalista_20130515.csv som er den der 
+er udgangspunktet for linksne' 
+
+* "Nye arter" flyttet op under sortering, der btw ikke længere vises som decimal-tal hvis
+det fejlagtigt optræder som sådan i databasen (hedder nu sorteringsnummer)
+
+* taxonstatus fjernet
+
+* links til allearter.dk for artsgrupper med mellemrum fungerer nu
+
+* statistik, klassifikation - fejlmeddelse rettet (sneg sig igennem fordi det er en nyintroduceret warning,
+som ikke findes i den PHP jeg bruger herhjemme). Riger->Arter viser nu kun accepterede arter. 
+Det samme gælder for række, klasse osv.
+
+* statistik, artsgrupper - nu også kun accepterede i arter, underarter osv. 
+Og nu går summen pludselig op :-)
+
+* klassifikations-hierarki er flyttet ned som knap under klassifikation. Boksen er nu med noget
+skygge så den ser mere vindue-agtig ud.
+
+
+
+
+
+
+
+
+

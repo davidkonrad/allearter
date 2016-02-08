@@ -1,0 +1,160 @@
+
+
+- bikset sammen med udgangspunkt i mailen fra Skipper, vores lille samtale, mine noter, 
+udskrifterne og forlægget samt den eksisterende søgeside. Designet har jeg ikke brugt så meget tid på, det ved 
+jeg ikke hvordan skal se ud, og det kan man bruge uendelig meget tid på; har koncentreret mig om at blokkene sidder 
+ved siden af hinanden, ikke laver scrollbarer over det hele og den slags. Skifttyper, farver, størrelser osv må 
+i gerne anvise. Har bare brugt nogle grå faver og denne "teal"-farve fra menuen. Jeg har kun siddet med Chrome 
+og en lille smule med FireFox, så jeg aner ikke hvordan det ser ud i f.eks IE. Alt det visuelle og "flyv" kan 
+man lave når funktionaliteten er på plads.
+
+Jeg vil anbefale at man kigger på denne mockup i Chrome!!! (det er det jeg selv har brugt, har overhovedet ikke
+fokuseret på andre browsere, eller begyndt at kære mig om hvorvidt HTML'en validerer)
+
+Bredde
+-----------------
+Der var ikke nogen fast bredde på forlægget, som på hjemmesiderne generelt - bare 90%, så jeg har lavet søgningen som 90% 
+centreret i midten, med en fast bredde for venstre kolonne, søgekriterierne. Når man resizer aktiveres et script der 
+sørger for enten at forstørre eller formindske indholdet i højre side, så det ikke ser dumt ud og man udfylder pladsen bedst.
+Men bredden bør man nok udnytte bedst muligt, også selvom man kommer fra en side med fast bredde. Når man tilvælger flere kolonner og 
+tabellen bliver for smal lader jeg den gå ud over rammen horisontalt. 
+
+
+Dansk / ikke dansk
+-----------------
+Jeg er gået ud fra fra at der menes al indholdet - både det man vil søge frem og det man søger på. Så indholdet 
+i opslagsboksene, dvs de bagvedliggende opslag, og søgeresultaterne (eg detaljer) vises gennemgående ift hvad der er sat i sprog. 
+Når man skifter sprog kaldes reset for at undgå "affald" fra tidligere søgninger eller det andet sprogmode.
+
+
+Opslagsbokse generelt
+-----------------
+Alt findes/fremsøges nu dynamisk. Boksene har en dummy tekst der fortæller hvad indholdet/søgekriteriet dækker over, 
+skriver man i boksens felt begynder den at søge og vise resultaterne allerede fra karakter 1 (ift sprog jfr ovenover). 
+Klikker man på "pil ned" loades alle resultater, man kan kombinere begge dele. Vælges der ikke noget går boksene tilbage i 
+dummy-tilstand, vælger man et element fremhæves det med mørk skriftfarve - så er det et søgekriterie. 
+Man kan ikke angive en ikke-lookup-bar' værdi (dvs vrøvl nulstilles automatisk så snart man forlader boksen)
+Det er nok den optimale måde at vise lookup-dataene på - der er kun et svagt delay med større datasæt, eg "Familie" hvis man 
+klikker pil ned, fordi den søger 2264 navne frem (eller i den stil, ved ikke-dansk), men at have det 
+hele i standard select-bokse ville være endnu langsommere og et scrollhelvede. 
+
+
+Artsgruppe / videnskabeligt navn
+-----------------
+Det var én af flere underfundigheder. I forlægget er videnskabeligt navn i virkeligheden artsgruppe. Så der skiftes blot mellem
+artsgruppe og artsgruppe_dk. Jeg GÅR UD FRA at videnskabeligt navn skal være videnskabeligt navn, så det er dette der vises i 
+denne boks, medens artsgruppe-boksen skifter mellem artsgruppe og artsgruppe_dk ift sprog. Nu er det desværre bare sådan at der 
+er 33305 videnskabelige navne, og det tager en krig at loade, og ingen vil jo scrolle igennem dem allesammen alligevel. 
+Så hvis man klikker "pil ned" søger jeg 500 tilfældigt valgte frem og viser dem sorteret (det kan man kalde en 
+"jeg føler mig heldig"-funktion :-) - hvis man begynder at skrive i feltet, abc, søges der naturligvis på alle 
+videnskabelige navne. 
+
+
+Klassifikation
+----------------
+Som vi talte om afstemmes søgningerne/indholdet i disse bokse individuelt ift indholdet i de øvrige bokse. Det går både 
+op og ned i hierarkiet. F.eks, vælger man "dyreriget" i rige, kan man kun vælge dem der tilhører dette rige under række, 
+"Armfødder, Bløddyr .." etc, vælger man her "bløddyr" kan man i klasse kun vælge "Blæksprutter, muslinger .. etc". 
+Som sagt går det begge veje, vælger man "benfisk" i klasse er eneste valgmulighed i række "rygstrengsdyr" osv. 
+Det er faktisk morsomt på den måde at "rejse" gennem hierarkierne.
+
+
+Taxonkategorier
+----------------
+Kriterierne har jeg implementeret således, at "Alle (standard)" som udgangspunkt er checked, og den ikke er mulig at 
+ændre for brugeren. Hvis man derimod checker nogle af de andre "disables" og afcheckes "Alle (standard)" så det 
+tydeliggøres hvad pointen er. Hvis man ikke længere har checked nogle af de øvrige checkbokse går "Alle (standard)" tilbage til at 
+være "enabled", men altså stadig ikke-klikbar. Det giver alligevel ikke nogen mening at vælge "alle" fra, alle 
+er jo alt og/eller ingenting. Så der kan være denne, eller nogen af de andre, ikke alt og noget andet. Hvis man har checked
+nogle af kategorierne kommer de med i søgningen, dvs hvis Art er checked inkluderes kun fundne poster med taxonkategorien art.
+
+
+foldeud / toiletpapir / enkel søgning osv
+----------------
+Kategorierne er nu sammenklappelige. Man skal klikke på overskriften, så rulles det underliggende indhold ud eller ind. 
+Designet er ækelt men i må finde ud af hvordan det skal se ud. Jeg har ikke helt kunne gennemskue hvad der er forskellen mellem 
+enkel søgning, udvidet søgning og fritekst søgning. Det virker lidt flydende, og det kræver under alle omstændigheder nogle regler
+for hvad der skal vises hvornår, og hvilke søgekriterier der skal eller kan udelukkes hvornår. Det er fint at kunne klappe sammen og
+kalde det "enkel søgning", men i princippet kan man jo alligevel lave både fritekst søgning, søgning på en bestemt artsgruppe og 
+søgning på en taxonkategori samtidig. Jeg ved ikke om det virkelig er "regler" i ønsker eller blot det man ser på skærmen? 
+Så i testen har jeg ladet det hele stå åbent. Så må vi finde ud af hvilke regler der skal være, hvis der skal være nogen, 
+hvad er en "enkel søgning", skal søgekriterier disables hvis man har valgt et bestemt søgemode, eller skal man kunne søge 
+i fritekst OG i taxonkategorier på samme tid osv osv. Det kan jeg jo ikke afgøre, så derfor står det bare åbent. 
+
+Det er overhovedet ikke noget problem at have "enkel søgning" og "udvidet søgning" på samme side, tværtimod nok lidt nemmere, det skal
+bare defineres hvad der er hvad, dvs nogle "regler". Men strengt nødvendigt er det omvendt heller ikke. 
+
+Jeg vil mene det er bedst at lave regler ift de helt tåbelige kombinationer, så muligheden for at lave volapyk-søgninger der 
+ikke giver nogen resultater mindskes. Jeg opfatter søgekriterierne som en "guide" frem mod resultater, det gør ikke noget 
+man forhindrer folk i at søge hvor det alligevel ikke giver nogen mening eller er lidet sandsynligt der kan komme et 
+resultat ud af det. 
+
+
+Fritekstsøgning
+----------------
+Fritekstsøgning er implementeret, blot en enkelt inputboks man kan skrive tekst i, som i forlægget. Fritekstsøgningen kender ikke
+forskel små og store bogstaver. Ift fritekstsøgningens "scope" eller søgeområde har jeg gættet mig frem ift Skippers mail. 
+
+"Samtlige navne (standard)" -> Rige,Rige_dk,Raekke,Raekke_dk,Underraekke,Underraekke_dk,
+Overklasse,Overklasse_dk,Klasse,Klasse_dk,Underklasse,Underklasse_dk,Infraklasse,Infraklasse_dk,Overorden,Overorden_dk,
+Orden,Orden_dk,Underorden,Underorden_dk,Infraorden,Infraorden_dk,Overfamilie,Overfamilie_dk,Familie,Familie_dk,Underfamilie,
+Underfamilie_dk,Tribus,Tribus_dk,Slaegt,Slaegt_dk
+
+"Kun arter, underarter m.v" -> Artsgruppe,Artsgruppe_dk,Videnskabeligt_navn,Dansk_navn,Synonymer,Synonymer_dk
+
+"Referencer" -> Referencenavn,Reference_aar,Referencetekst,Noter_systematik
+
+Det er naturligvis bare for at søge i et eller andet, skal helt sikkert ændres - kan ikke søge ørred frem under
+"samtlige navne", men under "arter" - som lægmand ville jeg nok forvente det første, men aner jo ikke hvordan sondringen skal være.
+Jeg har IKKE lavet en søgning på "alle felter" (disabled dette). Ikke fordi man ikke kan eller det på nogen måde er 
+besværligt - det virker bare lidt overflødigt at lave bevidstløs %like% på 65 felter. 
+
+Læg mærke til at fritekstsøgningen som andre søgekriterier kan kombineres med f.eks taxonkategorier, og det går fint som 
+en raffinering af søgningen. 
+
+
+Forvaltningskategorier
+----------------
+Er med i søgninger, checker man en eller flere kommer de med i "filtret".
+
+
+
+Søgning
+----------------
+Da der ikke er nogen "regler" medtager søgningen ALLE satte søgekriterier. I test kan derfor illuderes f.eks "enkel søgning" osv
+så man kan evaluere hvordan evt regler skal udformes. Fordi der er så mange data kan man lave nogle ret detaljerede søgninger.
+
+
+Detaljer
+---------------
+Det ser også rimelig grimt ud, men er i opbygning lavet ligesom forlægget, pånær at jeg har sat referencer til højre og noter til venstre 
+(så det udlignes lidt mere generelt i højden). Jeg har set der er ofte er links til eksterne hjemmesider i referenceteksten, så jeg
+parser denne og konverterer disse om til klikbare links med _blank hvis de findes. Man kan i øvrigt nu have X antal 
+detaljer "åbne" på samme tid, den gamle havde vist kun en. Som nævnt sondrer jeg her mellem sprog, hvis sproget er dansk 
+vises i "Overklasse" indholdet fra "Overklasse_dk" og så fremdeles. Slægt var ikke med på den oprindelige søgeside (?) så
+det tog jeg med.
+
+
+Tabel / kolonner
+--------------
+Tabellen skal naturligvis også smukkeseres ret kraftigt, men ser bedre ud fordi det er noget jquery theming. 
+Tekster er på dansk - kan vise 25,50,100 eller 500 rækker af gangen. Man kan tilføje ekstra kolonner via "Vis kolonner". 
+Fra papiret og i nævnte rækkefølge kan tilvælges Artsgruppe, Artsgruppe_dk, 
+Slaegt_dk, Referencenavn, Reference_aar, Referencetekst, Den_danske_roedliste og Fredede_arter. Tabellen fortsætter horisontalt 
+derudad når man begynder at tilvælge kolonner (som vi talte om "bred visning" osv) det skal nok bare sættes i system. Dette
+"filtrer søgeresultater" er en smart feature der kører regulært udtryk på alle felter, en slags fritekstsøgning på søgeresultatet.
+
+Ift CSV, Excel, PDF, Print : Print har jeg ikke prøvet, har ingen printer - det er et standard plugin der "burde" fungere. CSV og Excel
+er stort set det samme, den gemmer bare i et format Excel kan fortolke. Man bør ikke eksportere når man har detaljevisninger åbne,
+det vil jeg prøve at gøre noget ved. Men der er noget generelt kuk med disse ting jeg skal have rettet - vil nemlig også gerne 
+implementere det på samlingssiderne. 
+
+Når man refresher eller viser siden første gang søger den en tilfældig post frem med dansk navn, har bare ikke fået lavet en
+"Vidste du at XXX hedder YYYY på dansk"-poup, men det skal jeg nok gøre. 
+
+Kan klart lave en upload funktion med nyt CSV-udtræk. Men det kræver at Skipper ændrer nogle feltnavne i sit regneark
+og trækker det ud på en bestemt måde. Ellers burde det være rimelig enkelt.
+
+
+
+

@@ -1,0 +1,59 @@
+
+- har rettet title og metadescription på taksonomi=xxx+zzzz sitemap links (så sidens title rent faktisk 
+starter med f.eks "Ahornvortegalmide"). Så burde de komme højere op i hierarkiet. 
+Metadesc er navne+autor+klassifikation+referencetekst. Til min store glæde er 
+google begyndt at indeksere siderne (linksne) det er ikke spildt arbejde, selvom der forhåbentlig om kort 
+tid skiftes til et rigtigt domæne/webhotel. Sætter 301 redirect på alle sider til den tid, hvilket 
+fortæller google at siderne er flyttet permanent men ellers er de samme, uden at man mister linkenes "værdi"
+eller indhold. 
+
+
+- æ, ø og å i fritekstfeltet; det kan jeg altså godt. Men søgte man i "alle felter" fejlede den,
+fordi den her stadig søgte efter Noter_status :-(
+
+
+- fra mail 27.08.2012 "Fjong. "Videnskabelige navne" mangler lige at blive nulstillet."
+Nej, det er med vilje. Man skal jo gerne kunne vælge danske navne eller videnskabelige navne OG kunne
+nulstille! Danske navne er helt overordnet, ellers skal man tilvælge danske navne igen, når man nulstiller,
+ og er det meningen?? Hvis det er, retter jeg det. 
+
+
+- slægt flyttet ned under tribus. 
+
+
+- forsidebillede forstørres/minimeres nu med click. Det var godt nok også irriterende ;-)
+
+
+- Familie / orden er nu tilføjet forside-admin.
+
+
+- ekstra lange tekster i de forskellige opslagsbokse risikerer ikke længere at bryde linier
+
+
+- historik, permanente links
+Dette statistik/log kan bruges til meget. Alle søgninger logges, og der gemmes fortløbende en cookie på
+computeren ift hvilke søgninger man har foretaget. Under ekstrafunktioner kan man klikke på feltet
+"Din søgehistorik" og der kommer en liste over de søgninger man har foretaget 
+(i hvert fald siden omtrent kl 8 tirsdag morgen). Vælger man en søgning gentages
+den 1:1 [det kan jo så udvides med at man kan navngive sine søgninger, fjerne søgninger osv] 
+
+Det giver også mulighed for permanente links til søgninger. Det er ellers ikke muligt da søgningerne
+foregår på serveren via ajax (og derfor google ikke så nemt kan indeksere indholdet). Hver gemt søgning 
+får udover et id tildelt en unik "volapyk-kode", foretager man en søgning (eller vælger én fra historikken) 
+kommer der en tekst-boks "Perma-link til aktuel søgning" der er et statisk link til den søgning man 
+har foretaget. På den måde kan man faktisk sende et link til en anden med en specifik søgning, eller
+f.eks lave et link i en tekst, der genererer en søgning, f.eks 
+
+"Se en liste over danske blæksprutte-arter her" 
+(her er link til http://192.38.112.80/bif/?perma=87981c66-6375-ffb7-1abb-a74257ca)
+
+
+- har merget "mine" billed-links sammen med dem på 192.38.112.80, så er det lidt flere. I morgen skulle jeg
+gerne være færdig med en oversigtsmulighed/redigeringsmulighed OG et interface til disse søge-teasers 
+(der skulle være til venstre for forsidebilledet)
+
+
+Og har altså taget en backup af databasen på serveren, så hverken billeder eller promoer forsvinder, 
+selv hvis mySQL'en skulle kokse totalt. 
+
+
