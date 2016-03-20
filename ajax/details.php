@@ -232,7 +232,8 @@ class Details extends Db {
 			}
 			$ret.='<img src="'.$img.'" class="details-image"></span>';
 		} else {
-			$ret.='<img src="images/eol-load.gif"></span>';
+			//$ret.='<img src="images/eol-load.gif"></span>';
+			$ret.='</span>';
 		}
 		return $ret;
 	}

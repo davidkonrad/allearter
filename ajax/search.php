@@ -427,9 +427,9 @@ ini_set('display_errors', '1');
 			echo '<td>'.$this->crlf($record['Dansk']).'</td>';
 			echo '</tr>'."\n";
 		}
-		echo '</tbody></table>';
 
 		//is it af taxonomypage (factsheet for a single species)
+		/*
 		if (isset($_GET['taksonomi']) || isset($_GET['taxon']) || $count==1) { 
 			$_GET['id']=$record['ID'];
 			$_GET['lang']='da';
@@ -437,7 +437,9 @@ ini_set('display_errors', '1');
 			include('details.php');
 			echo '</td></tr>';
 		}
-	
+		*/
+
+		echo '</tbody></table>';	
 	}
 }
 

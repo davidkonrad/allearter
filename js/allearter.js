@@ -19,7 +19,6 @@ function doResize() {
 	ll=lw;
 	$("#bif-search-right").width(w+'px');
 	$("#bif-search-right").css('left',ll+'px');
-	//$("#bif-header-cnt").css('margin-left',ll+'px');
 }
 $(window).resize(function(e) {
 	if (resizing!==false) {
@@ -121,7 +120,7 @@ function initResult() {
 			$(nColVis).find("button").addClass("ui-button ui-state-default");
 			$(nColVis).find("button").css('width','110px');
 			nColVis.style.width = "112px";
-			nColVis.style.top = "-3px";
+			nColVis.style.top = "-1px";
 		},
 		fnInitComplete: function(oSettings, json) {
 			adjustHeights();
@@ -169,7 +168,7 @@ function initResult() {
 				 'sToolTip': 'Gem søgeresultatet og samtlige bagvedliggende felter fra databasen som CSV',
 				 "fnClick" : function( nButton, oConfig, flash ) {
 						downloadDlg();
-					     }
+		     }
 				}				
 			]
 		}
@@ -179,7 +178,6 @@ function initResult() {
 
 	if (!taksonomi) {
 	$('#search-result td.details').on('click', function (e) {
-		//console.log(e);
 		e.stopPropagation();
 		$this = $(this);
 		var tr=this.parentNode;
@@ -197,12 +195,23 @@ function initResult() {
 				var href='http://eol.org/search/?q='+taxon+'&search=Go';
 				$("#eol-link-"+id).attr('href',href);
 				openDetails.push(tr);
-				getEOLImage(taxon, id);
+				
+				//getEOLImage(taxon, id);
+				//console.log('xx', .length);
+				var eol_img = $(details).find('.eol-image').find('img').attr('src');
+				console.log('xx', typeof eol_img);
+				if (typeof eol_img == 'string') {
+					setTaxonImage(eol_img, id);
+				} else {
+					$("#eol-image-"+id).remove();
+				}
+				console.log(eol_img, id);
+			
 				adjustHeights();
 				//update .details-cnt height according to .details-item
 				setTimeout(function() {
 					var $details = $(details).find('.details-cnt'),
-						detailsItem = $details.find('.details-item')[0];
+							detailsItem = $details.find('.details-item')[0];
 					$(detailsItem).height(detailsItem.scrollHeight);
 					$details.height(detailsItem.scrollHeight);
 				}, 500);
@@ -223,11 +232,14 @@ function initResult() {
 		//var html=$(".details-cnt").html();
 		//html=linkify(html);
 		//$(".details-cnt").html(html);
+
+		/****
 		var id=$('.details').attr('artid');
 		var taxon=$("#eol-link-"+id).attr("taxon");
 		var href='http://eol.org/search/?q='+taxon+'&search=Go';
 		$("#eol-link-"+id).attr('href',href);
 		getEOLImage(taxon, id);
+		*****/
 	}
 
 	$("#search-result_length select").on('change', function() {
@@ -272,7 +284,9 @@ function setTaxonImage(url, id) {
 	$("#eol-found-image-"+id).on("mouseover",function() {
 		//$("#eol-found-image-"+id).css('width','480px');
 		$("#eol-found-image-"+id).css('width','450px');
+		$("#eol-found-image-"+id).css('overflow-x','hidden');
 		$("#eol-found-image-"+id).css('height','auto');
+		$("#eol-found-image-"+id).css('overflow-y','hidden');
 	});
 	$("#eol-found-image-"+id).on("mouseout",function() {
 		$("#eol-found-image-"+id).css('width','auto');
@@ -281,6 +295,8 @@ function setTaxonImage(url, id) {
 }
 
 function getEOLImage(taxon, id) {
+	console.log('GetEOLImage', taxon, url);
+	return;
 	var url='ajax/taxonimage.php?action=get&taxon='+taxon;
 	$.ajax({
 		url: url,
@@ -301,17 +317,13 @@ function getEOLImage(taxon, id) {
 }
 
 function recordCount(count, open) {
+	if (count == 1) $('#search-result td.details').trigger('click');
 	$('#recordcount').countTo({
 		from: 1,
 		to: count,
 		speed: 500,
-		refreshInterval: 50,
-		onComplete: function(value) {
-			if (open) {
-				$('#search-result td.details').trigger('click');
-			}
-		}
-	});
+		refreshInterval: 50
+	})
 }
 
 function insertExtraKlassifikation(field, value) {
