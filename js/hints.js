@@ -12,13 +12,13 @@ $(".info").each(function() {
 			break;
 		case 'artsgruppeh3' : 
 			var text='Artsgrupperne benyttet på allearter.dk er subjektive inddelinger, der ikke nødvendigvis afspejler naturlige, systematisk afgrænsede, enheder. De er i højere grad valgt ud fra praktiske hensyn og efter, hvor vidt arter er behandlet samlet i litteraturen.';
-			text+='<br><br>Læs mere <a href="http://allearter.dk/artsgrupper-generelt.htm">her</a>';
+			text+='<br><br>Læs mere <a href="http://allearter.dk/artsgrupper/">her</a>';
 			var title='Artsgrupper';
 			break;
 		case 'klassifikationh3' : 
 			var text='I søgefeltet kan der, udover i de overordnede kategorier som i boksene nedenfor, søges i samtlige mellemliggende niveauer, såsom underorden og overfamilie.';
 			text+='<br><br>Ved søgninger på dansk, angives det videnskabelige navn i tilfælde, hvor databasen ikke rummer et dansk navn.';
-			text+='<br><br>Læs mere <a href="http://allearter.dk/systematik.htm">her</a>';
+			text+='<br><br>Læs mere <a href="http://allearter.dk/om-allearter/systematik/">her</a>';
 			var title='Klassifikation';
 			break;
 		case 'forvaltningh3' :
@@ -27,7 +27,7 @@ $(".info").each(function() {
 			text+='ASCOBANS (småhvaler) <br> ';
 			text+='CWSS (sæler i Vadehavet)<br>';
 			text+='EUROBATS (flagermus)<br><br>';
-			text+='Læs mere om forvaltningskategorier <a href="http://allearter.dk/nyheder-oevrige.htm#Forvaltningskategorier">her</a>';
+			text+='Læs mere om forvaltningskategorier <a href="http://allearter.dk/om-allearter/om-databasen/">her</a>';
 			var title='Forvaltningskategorier';
 			break;
 		case 'taxonkategorih3':
@@ -37,7 +37,7 @@ $(".info").each(function() {
 		case 'artsudbredelseh3' : 
 			var text='Accepterede arter, underarter m.v., er dem, der bør optræde på en dansk liste i følge ekspertvurderinger og/eller traditioner for de enkelte artsgrupper.';
 			text+='Hvor der ikke findes tilstrækkelig ekspertise eller viden, følges de overordnede kriterier for allearter.dk.';
-			text+='<br><br>Læs mere om disse og se eksempler på accepterede/ikke accepterede arter <a href="http://allearter.dk/danske_arter.htm">her</a>.';
+			text+='<br><br>Læs mere om disse og se eksempler på accepterede/ikke accepterede arter <a href="http://allearter.dk/om-allearter/hvor-mange-arter-i-dk/">her</a>.';
 			var title='Status';
 			break;
 		case 'extrah3' : 
