@@ -6721,3 +6721,9 @@ Overklasse like "%Stichopus tremulus%" or Overklasse_dk like "%Stichopus tremulu
 Orden like "%Stichopus tremulus%" or Orden_dk like "%Stichopus tremulus%" or Underorden like "%Stichopus tremulus%" or Underorden_dk like "%Stichopus tremulus%" or Infraorden like "%Stichopus tremulus%" or Infraorden_dk like "%Stichopus tremulus%" or Overfamilie like "%Stichopus tremulus%" or Overfamilie_dk like "%Stichopus tremulus%" or Familie like "%Stichopus tremulus%" or Familie_dk like "%Stichopus tremulus%" or Underfamilie like "%Stichopus tremulus%" or 
 Underfamilie_dk like "%Stichopus tremulus%" or Tribus like "%Stichopus tremulus%" or Tribus_dk like "%Stichopus tremulus%" or Slaegt like "%Stichopus tremulus%" or Slaegt_dk like "%Stichopus tremulus%" or Videnskabeligt_navn like "%Stichopus tremulus%" or Dansk_navn like "%Stichopus tremulus%" or Synonymer like "%Stichopus tremulus%" or Synonymer_dk like "%Stichopus tremulus%" or Artsgruppe like "%Stichopus tremulus%" or  
 Artsgruppe_dk like "%Stichopus tremulus%") order by Videnskabeligt_navn
+select distinct Familie from allearter where Familie like "a%" and  1=1  order by Familie asc
+select distinct Familie from allearter where Familie like "as%" and  1=1  order by Familie asc
+select distinct Orden from allearter where Familie="Ascidicolidae"
+select distinct Klasse from allearter where Orden="Cyclopoida"
+select distinct Raekke from allearter where Klasse="Maxillopoda"
+select distinct Rige from allearter where Raekke="Arthropoda"
