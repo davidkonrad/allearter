@@ -428,17 +428,6 @@ ini_set('display_errors', '1');
 			echo '</tr>'."\n";
 		}
 
-		//is it af taxonomypage (factsheet for a single species)
-		/*
-		if (isset($_GET['taksonomi']) || isset($_GET['taxon']) || $count==1) { 
-			$_GET['id']=$record['ID'];
-			$_GET['lang']='da';
-			echo '<tr id="details-preload"><td class="details" colspan="6">';
-			include('details.php');
-			echo '</td></tr>';
-		}
-		*/
-
 		echo '</tbody></table>';	
 	}
 }

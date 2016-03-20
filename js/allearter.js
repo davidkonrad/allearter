@@ -177,69 +177,54 @@ function initResult() {
 	openDetails = [];
 
 	if (!taksonomi) {
-	$('#search-result td.details').on('click', function (e) {
-		e.stopPropagation();
-		$this = $(this);
-		var tr=this.parentNode;
-		var id=$this.attr('artid');
-		var i=$.inArray(tr, openDetails);
-		if (i===-1) {
-			$this.css('border','1px solid #ebebeb');
-			$this.css('background-color','#ebebeb');
-			var url="ajax/details.php?id="+id+'&lang='+$('input[name=sprog]:checked').val();
-			$.get(url, function (response) {
-				var html=response;
-				//html=linkify(html);
-				details = resultTable.fnOpen(tr, html, 'details');
-				var taxon=$("#eol-link-"+id).attr("taxon");
-				var href='http://eol.org/search/?q='+taxon+'&search=Go';
-				$("#eol-link-"+id).attr('href',href);
-				openDetails.push(tr);
+		$('#search-result td.details').on('click', function (e) {
+			e.stopPropagation();
+			$this = $(this);
+			var tr=this.parentNode;
+			var id=$this.attr('artid');
+			var i=$.inArray(tr, openDetails);
+			if (i===-1) {
+				$this.css('border','1px solid #ebebeb');
+				$this.css('background-color','#ebebeb');
+				var url="ajax/details.php?id="+id+'&lang='+$('input[name=sprog]:checked').val();
+				$.get(url, function (response) {
+					var html=response;
+					//html=linkify(html);
+					details = resultTable.fnOpen(tr, html, 'details');
+					var taxon=$("#eol-link-"+id).attr("taxon");
+					var href='http://eol.org/search/?q='+taxon+'&search=Go';
+					$("#eol-link-"+id).attr('href',href);
+					openDetails.push(tr);
 				
-				//getEOLImage(taxon, id);
-				//console.log('xx', .length);
-				var eol_img = $(details).find('.eol-image').find('img').attr('src');
-				console.log('xx', typeof eol_img);
-				if (typeof eol_img == 'string') {
-					setTaxonImage(eol_img, id);
-				} else {
-					$("#eol-image-"+id).remove();
-				}
-				console.log(eol_img, id);
+					var eol_img = $(details).find('.eol-image').find('img').attr('src');
+					if (typeof eol_img == 'string') {
+						setTaxonImage(eol_img, id);
+					} else {
+						$("#eol-image-"+id).remove();
+					}
 			
-				adjustHeights();
-				//update .details-cnt height according to .details-item
-				setTimeout(function() {
-					var $details = $(details).find('.details-cnt'),
-							detailsItem = $details.find('.details-item')[0];
-					$(detailsItem).height(detailsItem.scrollHeight);
-					$details.height(detailsItem.scrollHeight);
-				}, 500);
-			});
-		} else {
-			//is it the actual taxon link we have clicked on?
-			if ($this.attr('artid')>0) {
-				$this.css('border','none');
-				$this.css('background-color','#ffffff');
-				resultTable.fnClose(tr);
-				openDetails.splice(i,1);
-				adjustHeights();
+					adjustHeights();
+					//update .details-cnt height according to .details-item
+					setTimeout(function() {
+						var $details = $(details).find('.details-cnt'),
+								detailsItem = $details.find('.details-item')[0];
+						$(detailsItem).height(detailsItem.scrollHeight);
+						$details.height(detailsItem.scrollHeight);
+					}, 500);
+				});
+			} else {
+				//is it the actual taxon link we have clicked on?
+				if ($this.attr('artid')>0) {
+					$this.css('border','none');
+					$this.css('background-color','#ffffff');
+					resultTable.fnClose(tr);
+					openDetails.splice(i,1);
+					adjustHeights();
+				}
 			}
-		}
-	});
+		})
 	} else {
 		setTimeout(removeToolbars, 200);
-		//var html=$(".details-cnt").html();
-		//html=linkify(html);
-		//$(".details-cnt").html(html);
-
-		/****
-		var id=$('.details').attr('artid');
-		var taxon=$("#eol-link-"+id).attr("taxon");
-		var href='http://eol.org/search/?q='+taxon+'&search=Go';
-		$("#eol-link-"+id).attr('href',href);
-		getEOLImage(taxon, id);
-		*****/
 	}
 
 	$("#search-result_length select").on('change', function() {
@@ -272,47 +257,14 @@ function getSupplierText(url, link) {
 function setTaxonImage(url, id) {
 	var img='<img id="eol-found-image-'+id+'" src="'+url+'" title="'+getSupplierText(url, false)+'" class="details-image">';
 	img=getSupplierText(url, true)+img;
-/*
-	$("#eol-image-"+id).css('height','120px');
-	$("#eol-image-"+id).css('min-height','120px');
-	$("#eol-image-"+id).css('overflow','visible');
-	$("#eol-image-"+id).css('display','block');
-	$("#eol-image-"+id).css('position','relative');
-*/
 	$("#eol-image-"+id).html(img);
-
 	$("#eol-found-image-"+id).on("mouseover",function() {
-		//$("#eol-found-image-"+id).css('width','480px');
 		$("#eol-found-image-"+id).css('width','450px');
-		$("#eol-found-image-"+id).css('overflow-x','hidden');
 		$("#eol-found-image-"+id).css('height','auto');
-		$("#eol-found-image-"+id).css('overflow-y','hidden');
 	});
 	$("#eol-found-image-"+id).on("mouseout",function() {
 		$("#eol-found-image-"+id).css('width','auto');
 		$("#eol-found-image-"+id).css('height','100px');
-	});
-}
-
-function getEOLImage(taxon, id) {
-	console.log('GetEOLImage', taxon, url);
-	return;
-	var url='ajax/taxonimage.php?action=get&taxon='+taxon;
-	$.ajax({
-		url: url,
-		cache: true,
-		success: function(response) {
-			//console.log('X'+response+'X');
-			switch (response) {
-				case 'EXCLUDED' :
-				case 'FAIL' :
-					$("#eol-image-"+id).remove();
-					break;
-				default :
-					setTaxonImage(response, id);
-					break;
-			}
-		}
 	});
 }
 
@@ -358,15 +310,6 @@ function valueStoreCallback(field, value) {
 		insertExtraKlassifikation(field, value);
 		return false;
 	}
-	/*
-	if (value!='') {
-		$('#'+field).next().find('input').removeClass('placeholder');
-		autoLookup(field, value);
-	} else {
-		resetKlasInput(field);
-		resetDownwards(field);
-	}
-	*/
 	enableSearch();
 
 	if (field=='artsgruppe' || field=='artsgruppedk') {
@@ -419,9 +362,9 @@ function autoLookup(field, value) {
 			valueStoreCallback(new_field, html);
 		},
 		error: function(xhr, ajaxOptions, thrownError){
-                    //alert(xhr.status);
-                    //alert(thrownError);
-                }   
+      //alert(xhr.status);
+      //alert(thrownError);
+    }   
 
 	});
 }
@@ -578,13 +521,6 @@ $(document).ready(function() {
 	$("#klas_slaegt").next('span').find('input').watermark('[ Slægt ]');
 
 	$("#fritext").watermark('skriv ...');
-
-	/*
-	$('.collapsible').collapsible({
-		//defaultOpen: "artsgruppeh3,klassifikationh3,fritexth3,forvaltningh3,taxonkategorih3,artsudbredelseh3,extrah3"
-		defaultOpen: "fritexth3"
-	});
-	*/
 
 	//all records, or search by permalink
 	if (paramExists('perma')) {
