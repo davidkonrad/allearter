@@ -1,6 +1,9 @@
 <?
 /* base class for AJAX and JSON */
-header('Content-Type: text/html; charset=utf-8');
+header('Access-Control-Allow-Headers: Content-Type');
+header('Access-Control-Allow-Methods: GET');
+header('Access-Control-Allow-Origin: *');
+header('Content-Type: text/json; charset=utf-8');
 
 class Base extends Db {
 	
