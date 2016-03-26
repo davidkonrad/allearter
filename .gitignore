@@ -1,4 +1,6 @@
 /administration/upload
 /DataTables*
-error.log
+error_log
+ajax/debug.txt
+
 
