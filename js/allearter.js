@@ -172,9 +172,43 @@ function initResult() {
 				}				
 			]
 		}
-        });
+	});
+
 	$('#search-result td.details').css('background-color','#ffffff');
 	openDetails = [];
+
+	function doOpenDetails($td) {
+		var id=$td.attr('artid');
+		var tr= $td[0].parentNode;
+		$td.css('border','1px solid #ebebeb');
+		$td.css('background-color','#ebebeb');
+		var url="ajax/details.php?id="+id+'&lang='+$('input[name=sprog]:checked').val();
+		$.get(url, function (response) {
+			var html=response;
+			//html=linkify(html);
+			details = resultTable.fnOpen(tr, html, 'details');
+			var taxon=$("#eol-link-"+id).attr("taxon");
+			var href='http://eol.org/search/?q='+taxon+'&search=Go';
+			$("#eol-link-"+id).attr('href',href);
+			openDetails.push(tr);
+				
+			var eol_img = $(details).find('.eol-image').find('img').attr('src');
+			if (typeof eol_img == 'string') {
+				setTaxonImage(eol_img, id);
+			} else {
+				$("#eol-image-"+id).remove();
+			}
+			
+			adjustHeights();
+			//update .details-cnt height according to .details-item
+			setTimeout(function() {
+				var $details = $(details).find('.details-cnt'),
+						detailsItem = $details.find('.details-item')[0];
+				$(detailsItem).height(detailsItem.scrollHeight);
+				$details.height(detailsItem.scrollHeight);
+			}, 500);
+		})
+	}
 
 	if (!taksonomi) {
 		$('#search-result td.details').on('click', function (e) {
@@ -184,6 +218,8 @@ function initResult() {
 			var id=$this.attr('artid');
 			var i=$.inArray(tr, openDetails);
 			if (i===-1) {
+				doOpenDetails($this)				
+				/*
 				$this.css('border','1px solid #ebebeb');
 				$this.css('background-color','#ebebeb');
 				var url="ajax/details.php?id="+id+'&lang='+$('input[name=sprog]:checked').val();
@@ -212,6 +248,7 @@ function initResult() {
 						$details.height(detailsItem.scrollHeight);
 					}, 500);
 				});
+				*/
 			} else {
 				//is it the actual taxon link we have clicked on?
 				if ($this.attr('artid')>0) {
@@ -225,6 +262,11 @@ function initResult() {
 		})
 	} else {
 		setTimeout(removeToolbars, 200);
+	}
+
+	if (taksonomi) {
+		doOpenDetails($('#search-result td.details').first())
+		//$('#search-result td.details').last().trigger('click')
 	}
 
 	$("#search-result_length select").on('change', function() {
@@ -532,12 +574,6 @@ $(document).ready(function() {
 	}
 
 	initResult();
-
-	/*
-	$("#statistik").button();
-	$("#artsgruppe-statistik").button();
-	$("#referencer").button();
-	*/
 
 	doResize();
 	reset();
