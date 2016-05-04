@@ -20,7 +20,7 @@ class ConvertAllearter extends convertBase {
 'Overfamilie_dk,Familie,Familie_dk,Underfamilie,Underfamilie_dk,Tribus,Tribus_dk,Slaegt,Slaegt_dk,Synonymer,Synonymer_dk,'.
 'Referencenavn,Reference_aar,Referencetekst,Dansk,Noter_systematik,Noter_oekologi,Noter_nye_arter,Dato,Aendringsdato,'.
 'Den_danske_roedliste,Fredede_arter,Habitatdirektivet,Fuglebeskyttelsesdirektivet,Bern_konventionen,Bonn_konventionen,CITES,'.
-'Oevrige,NOBANIS_arter,NOBANIS_herkomst,NOBANIS_etableringsstatus,NOBANIS_invasiv_optraeden';
+'Oevrige,NOBANIS_arter,NOBANIS_herkomst,NOBANIS_etableringsstatus,NOBANIS_invasiv_optraeden,Licens';
 
 
 		$this->delimiter='';

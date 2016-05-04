@@ -281,10 +281,6 @@ function buttonPanel() {
 		</a>
 	</div>
 	<div style="position:relative;float:left;left:60px;clear:none;top:0px;">
-		<!--
-		<h2 class="ku-title">Projekt Allearter</h2> 
-		<h3>DanBIF - Danish Biodiversity Facility</h3> 
-		-->
 		<a href="http://allearter.dk/" title="Projekt Allearter">
 			<img src="http://allearter.dk/grafik/navnetraek.gif">
 		</a>
@@ -299,7 +295,10 @@ function buttonPanel() {
 			</span>
 			<div style="margin-top:40px;text-align:center;">
 				Søg i Allearter databasen :<br>
-				<input type="text" id="search-input-simple" placeholder="Skriv ..."><br>
+				<input type="text" id="search-input-simple" placeholder="Skriv ..." style="margin-bottom:0px;"><br>
+				<span style="font-size:80%;clear:both;display:inline-block;padding:0px;margin:0px;line-height:90%;margin-bottom:10px;">
+					Overhold venligst brugslicenser angivet for artslisterne  <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> / <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a> – Læs mere <a href="http://allearter.dk/om-allearter/">her</a>
+				</span><br>
 				<button id="search-btn-simple">Søg</button>
 				<button id="show-search-advanced">Avanceret søgning</button>
 				<button id="hierarchy" title="Klik for at vise klassifikatiovns-hierarki">
@@ -487,18 +486,19 @@ $(document).ready(function() {
 <? $html->divider(75);?>
 
 <div id="footer">
-    <div id="footer-col-left">
-	<address>
-            <a href="http://www.danbif.dk/">DanBIF - Danish Biodiversity Information Facility c/o Statens Naturhistoriske Museum</a><br>
-            <a href="http://www.ku.dk/">Københavns Universitet</a><br>
-            Universitetsparken 15, 2100 København Ø
-        <br>
-	</address>
-    </div>
-    <!-- End footer-col-left -->
-    <br style="display: none;">
-    <div id="footer-col-right">
-            Kontakt:
+	<div id="footer-col-left">
+		<address>
+			<a href="http://www.danbif.dk/">DanBIF - Danish Biodiversity Information Facility c/o Statens Naturhistoriske Museum</a><br>
+			<a href="http://www.ku.dk/">Københavns Universitet</a>
+			<br>
+			Universitetsparken 15, 2100 København Ø
+			<br>
+		</address>
+	</div>
+	<!-- End footer-col-left -->
+	<br style="display: none;">
+	<div id="footer-col-right">
+		Kontakt:
 	<address>
 		Projektansvarlig: Lars Skipper<br>
 		<a href="mailto:lars.skipper@get2net.dk">lars.skipper<!-- @@@ -->@<!-- @@@ -->get2net<!-- nospam -->.<!-- nomorespam -->dk</a><br>

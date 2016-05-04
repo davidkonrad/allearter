@@ -168,8 +168,25 @@ class Details extends Db {
 		$html.=$this->item('Referenceår :',$this->crlf(round($row['Reference_aar'])));
 		
 		$text=$this->linkify($row['Referencetekst']);
-		//$text=wordwrap($text, 40, '<br>', true);
 		$html.=$this->itemLong('Referencetekst :', $text );
+
+		//03.05.2016
+		$html.=$this->header('Licens');
+		$licens = $row['Licens'];
+		switch ($licens) {
+			case 'CC BY 4.0' :
+				$licens = 'Creative Commons';
+				$a = '<a href="https://creativecommons.org/licenses/by/4.0/" target=_blank>CC BY 4.0</a>';
+				break;
+			case 'CC BY-NC 4.0' :
+				$licens = 'Creative Commons';
+				$a = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target=_blank>CC BY-NC 4.0</a>';
+				break;
+			default :
+				$a = $licens;
+				break;
+		}
+		$html.=$this->item($licens, $a);
 		
 		$html.='</div>';
 		echo $html;

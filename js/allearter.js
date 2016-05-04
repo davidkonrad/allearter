@@ -112,7 +112,8 @@ function initResult() {
 		      {"bVisible": false}, /* Referencetekst */
 		      {"bVisible": false}, /* Den_danske_roedliste */
 		      {"bVisible": false}, /* Fredede_arter */
-		      {"bVisible": false}  /* Dansk */
+		      {"bVisible": false},  /* Dansk */
+		      {"bVisible": false}  /* Licens */
 	      	],
 		fnDrawCallback: function (o) {
 			var nColVis = $('div.ColVis', o.nTableWrapper)[0];
@@ -150,6 +151,8 @@ function initResult() {
 				  'sToolTip': 'Gem søgeresultater som PDF fil',
 				  "sPdfOrientation": "landscape",
 				  "fnClick": function( nButton, oConfig, flash ) {
+						console.log(oConfig);
+						oConfig.sPdfMessage = 'Overhold venligst brugslicenser angivet for artslisterne, henholdsvis Creative Commons CC BY 4.0 eller CC BY-NC 4.0';
 						flash.setFileName('allearter.pdf');
 						this.fnSetText( flash,
 							"title:"+ this.fnGetTitle(oConfig) +"\n"+

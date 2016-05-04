@@ -166,6 +166,7 @@ Klik på "Vis kolonner" for markering af de kolonner, der ønskes vist.
 <th style="width:130px;">Rødlistestatus</th>
 <th style="width:130px;">Fredningsstatus</th>
 <th style="width:130px;">Accepteret</th>
+<th style="width:90px;">Licens</th>
 </tr></thead>
 <?
 	}
@@ -268,7 +269,6 @@ NOBANIS_herkomst,NOBANIS_etableringsstatus,NOBANIS_invasiv_optraeden'; break;
 			foreach($ff as $f) {
 				if ($p!='') $p.=' or ';
 				$p.=$f.' like "%'.$text.'%"';
-				//$p.=' soundex ('.$f.') like soundex("'.$text.'")';
 			}
 			$p='('.$p.')';
 			$where[]=$p;
@@ -308,7 +308,7 @@ NOBANIS_herkomst,NOBANIS_etableringsstatus,NOBANIS_invasiv_optraeden'; break;
 	private function loadData() {
 		$fields='ID, Videnskabeligt_navn, Autor, Dansk_navn, Familie, Familie_dk, Orden, Orden_dk, '.
 			'Artsgruppe, Artsgruppe_dk, Slaegt_dk, Referencenavn, Reference_aar, Referencetekst, '.
-			'Den_danske_roedliste, Fredede_arter, Dansk, Synonymer, Synonymer_dk';
+			'Den_danske_roedliste, Fredede_arter, Dansk, Synonymer, Synonymer_dk, Licens';
 
 		//random, art of the day
 		if (empty($_GET)) {
@@ -377,18 +377,6 @@ ini_set('display_errors', '1');
 		foreach ($this->records as $record) {
 			$count++;
 
-			//echo $this->getArtsgruppeLink($record['Artsgruppe_dk']);
-			/*
-			$artsgruppe_link = ($record['Artsgruppe_dk']!='') ? 
-				strtolower($record['Artsgruppe_dk']).'.htm' :
-				strtolower($record['Artsgruppe']).'.htm';
-			$artsgruppe_link=str_replace('Å','aa',$artsgruppe_link);
-			$artsgruppe_link=str_replace('æ','ae',$artsgruppe_link);
-			$artsgruppe_link=str_replace('å','aa',$artsgruppe_link);
-			$artsgruppe_link=str_replace('ø','oe',$artsgruppe_link);
-			$artsgruppe_link=str_replace(' ','-',$artsgruppe_link);
-			$artsgruppe_link='<a href="http://allearter.dk/'.$artsgruppe_link.'" target=_blank title="Gå til artsgruppens info-side" style="color:teal;text-decoration:none;">';
-			*/
 			$title='Læs mere om ';
 			$title_dk = $record['Artsgruppe_dk']!='' 
 				? $title.$record['Artsgruppe_dk'].' ('.$record['Artsgruppe'].')'
@@ -425,6 +413,8 @@ ini_set('display_errors', '1');
 			echo '<td>'.$this->crlf($record['Den_danske_roedliste']).'</td>';
 			echo '<td>'.$this->crlf($record['Fredede_arter']).'</td>';
 			echo '<td>'.$this->crlf($record['Dansk']).'</td>';
+			//03.05.2016
+			echo '<td>'.$this->crlf($record['Licens']).'</td>';
 			echo '</tr>'."\n";
 		}
 
