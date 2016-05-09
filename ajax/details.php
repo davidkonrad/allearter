@@ -57,8 +57,12 @@ class Details extends Db {
 			$html.=$this->item('', $gallery);
 		}
 
+		//09-05-2016
+		$artsgruppe = $row['Artsgruppe'];
+		if ($row['Artsgruppe_dk'] != $artsgruppe) $artsgruppe.=' ('.$row['Artsgruppe_dk'].')';
+
 		$html.=$this->header('');
-		$html.=$this->item('Artsgruppe :',$row['Artsgruppe'.$ex]);
+		$html.=$this->item('Artsgruppe :', $artsgruppe);
 		$html.=$this->item('Videnskabeligt navn :',$this->crlf($row['Videnskabeligt_navn']), true);
 		$html.=$this->itemLong('Autor :',$row['Autor']);
 		$html.=$this->item('Dansk navn :',$row['Dansk_navn']);
@@ -69,25 +73,6 @@ class Details extends Db {
 		//$html.=$this->item('Taxonstatus :',$row['Taxonstatus']);
 		
 		$html.=$this->header('Klassifikation');
-
-		/*
-		$html.=$this->itemTitle('Rige :',$row['Rige'.$ex], 'Rige');
-		$html.=$this->itemTitle('Række :',$row['Raekke'.$ex], 'Raekke');
-		$html.=$this->itemTitle('Underrække :',$row['Underraekke'.$ex], 'Underraekke');
-		$html.=$this->itemTitle('Overklasse :',$row['Overklasse'.$ex], 'Overklasse');
-		$html.=$this->itemTitle('Klasse :',$row['Klasse'.$ex], 'Klasse');
-		$html.=$this->itemTitle('Underklasse :',$row['Underklasse'.$ex], 'Underklasse');
-		$html.=$this->itemTitle('Infraklasse :',$row['Infraklasse'.$ex], 'Infraklasse');
-		$html.=$this->itemTitle('Overorden :',$row['Overorden'.$ex], 'Overorden');
-		$html.=$this->itemTitle('Orden :',$row['Orden'.$ex], 'Orden');
-		$html.=$this->itemTitle('Underorden :',$row['Underorden'.$ex], 'Underorden');
-		$html.=$this->itemTitle('Infraorden :',$row['Infraorden'.$ex], 'Infraorden');
-		$html.=$this->itemTitle('Overfamilie :',$row['Overfamilie'.$ex], 'Overfamilie');
-		$html.=$this->itemTitle('Familie :',$row['Familie'.$ex], 'Familie');
-		$html.=$this->itemTitle('Underfamilie :',$row['Underfamilie'.$ex], 'Underfamilie');
-		$html.=$this->itemTitle('Tribus :',$row['Tribus'.$ex], 'Tribus');
-		$html.=$this->itemTitle('Slægt :', '<i>'.$row['Slaegt'.$ex].'</i>', 'Slaegt');
-		*/
 
 		foreach ($this->klassifikation as $field=>$value) {
 			if ($row[$value]!='') {
@@ -139,7 +124,7 @@ class Details extends Db {
 		$html.=$this->header('');
 		$html.=$this->item('Dato :', $this->getDato($row['Dato']));
 		//$html.=$this->item('Sorteringsnummer :',$this->crlf(round($row['Sortering'])));
-		$html.=$this->item('Ny art :',$row['Noter_nye_arter']);
+		//$html.=$this->item('Ny art :',$row['Noter_nye_arter']);
 
 		$html.=$this->header('Noter');
 		$html.=$this->item('Systematik :',$row['Noter_systematik']);

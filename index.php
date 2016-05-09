@@ -297,7 +297,7 @@ function buttonPanel() {
 				Søg i Allearter databasen :<br>
 				<input type="text" id="search-input-simple" placeholder="Skriv ..." style="margin-bottom:0px;"><br>
 				<span style="font-size:80%;clear:both;display:inline-block;padding:0px;margin:0px;line-height:90%;margin-bottom:10px;">
-					Overhold venligst brugslicenser angivet for artslisterne  <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> / <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a> – Læs mere <a href="http://allearter.dk/om-allearter/">her</a>
+					Overhold venligst brugslicenser angivet for artslisterne  <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> / <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a> – Læs mere <b><a href="http://allearter.dk/hoejrebokse/nyt-og-aktuelt/retningslinjer/" title="Retningslinjer for brug af data">her</a></b>.
 				</span><br>
 				<button id="search-btn-simple">Søg</button>
 				<button id="show-search-advanced">Avanceret søgning</button>
@@ -434,11 +434,9 @@ function buttonPanel() {
 					</div>
 				</fieldset>
 
+				<!--
 				<fieldset>
 					<legend>Ekstra funktioner</legend>
-					<!--
-						<div class="info"></div>
-					-->
 					<div class="container"> 
 						<input type="checkbox" id="nye_arter" class="nye-arter-cri" onchange="enableSearch();"/><label class="right" for="nye_arter">Nye arter</label>
 						<br/><br/>
@@ -449,6 +447,7 @@ function buttonPanel() {
 						</div>
 					</div>
 				</fieldset>
+				-->
 
 			</div>
 
