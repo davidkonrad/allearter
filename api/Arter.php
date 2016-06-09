@@ -15,8 +15,8 @@ class Arter extends Base {
 
 	protected function run($query) {
 		$SQL='select distinct Videnskabeligt_navn, Dansk_navn from allearter '.
-			'where Videnskabeligt_navn like "'.$query.'%" '.
-			'or Dansk_navn like "'.$query.'%" '.
+			'where Videnskabeligt_navn like "%'.$query.'%" '.
+			'or Dansk_navn like "%'.$query.'%" '.
 			'and Dansk="Ja"';
 
 		mysql_set_charset('utf8');
