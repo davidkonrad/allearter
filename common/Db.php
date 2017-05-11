@@ -17,7 +17,7 @@ class Db {
 	public function __construct() { 
 		$host = $_SERVER["SERVER_ADDR"]; 
 		if (($host=='127.0.0.1') || ($host=='::1')) {
-			$this->database = 'bif';
+			$this->database = 'allearter';
 			$this->hostname = 'localhost';
 			$this->username = 'root';
 			$this->password = 'dadk';
