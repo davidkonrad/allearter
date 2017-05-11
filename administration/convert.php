@@ -14,7 +14,7 @@ class ConvertAllearter extends convertBase {
 		parent::__construct($file);
 
 		$this->COLSTR=
-'Artsgruppe,Artsgruppe_dk,Videnskabeligt_navn,Autor,Dansk_navn,Taxonkategori,Taxonstatus,Sortering,'.
+'ID,Artsgruppe,Artsgruppe_dk,Videnskabeligt_navn,Autor,Dansk_navn,Taxonkategori,Taxonstatus,Sortering,'.
 'Rige,Rige_dk,Raekke,Raekke_dk,Underraekke,Underraekke_dk,Overklasse,Overklasse_dk,Klasse,Klasse_dk,Underklasse,Underklasse_dk,'.
 'Infraklasse,Infraklasse_dk,Overorden,Overorden_dk,Orden,Orden_dk,Underorden,Underorden_dk,Infraorden,Infraorden_dk,Overfamilie,'.
 'Overfamilie_dk,Familie,Familie_dk,Underfamilie,Underfamilie_dk,Tribus,Tribus_dk,Slaegt,Slaegt_dk,Synonymer,Synonymer_dk,'.

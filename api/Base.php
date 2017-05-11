@@ -34,7 +34,7 @@ class Base extends Db {
 				$JSON.='"'.$key.'" : [ '.$this->rowToJSON($value).' ] ';
 			} else {
 				$value=str_replace(array("\n","\r"), '', $value);
-				$value=utf8_encode($value);
+				//$value=utf8_encode($value);
 				$JSON.='"'.$key.'" : "'.$value.'"';
 			}
 		}

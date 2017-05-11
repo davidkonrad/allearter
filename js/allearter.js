@@ -151,7 +151,6 @@ function initResult() {
 				  'sToolTip': 'Gem søgeresultater som PDF fil',
 				  "sPdfOrientation": "landscape",
 				  "fnClick": function( nButton, oConfig, flash ) {
-						console.log(oConfig);
 						oConfig.sPdfMessage = 'Overhold venligst brugslicenser angivet for artslisterne, henholdsvis Creative Commons CC BY 4.0 eller CC BY-NC 4.0';
 						flash.setFileName('allearter.pdf');
 						this.fnSetText( flash,

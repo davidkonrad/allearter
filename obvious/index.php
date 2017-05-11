@@ -119,30 +119,32 @@ function load() {
 		$this->header();
 		$SQL='select count(*) as c from allearter';
 		$antal=$this->getRow($SQL);
+		$SQL='select count(*) as c from allearter where Taxonkategori="Art" and Dansk="Ja"';
+		$danske=$this->getRow($SQL);
+		/*
+		$SQL='select count(*) as c from allearter';
+		$antal=$this->getRow($SQL);
 		$SQL='select count(*) as c from allearter where Dansk="Ja"';
 		$danske=$this->getRow($SQL);
-		echo '<table>';
+		*/
+		echo '<table style="font-weight:bold;">';
 
 		echo '<tr><td>Danske arter&nbsp;&nbsp;&nbsp;</td><td>'.
 			$this->format($danske['c']).
 			'</td>';
 
 			echo '<td>';
-			echo '<a href="http://allearter.dk/om-allearter/hvor-mange-arter-i-dk/" title="Antal accepterede arter på allearter.dk - klik for at læse mere">';
-			echo '<img src="http://allearter-databasen.dk/images/info.png" style="height:10px;">';
-			echo '</a>';
+			echo '<img src="http://allearter-databasen.dk/images/info.png" style="height:10px;" title="Antal accepterede arter på allearter.dk.">';
 			echo '</td>';
 	
 			echo '</tr>';
 
-		echo '<tr><td>Antal arter&nbsp;</td><td>'.
+		echo '<tr><td>Databaseposter&nbsp;</td><td>'.
 			$this->format($antal['c']).
 			'</td>';
 
 			echo '<td>';
-			echo '<a href="http://allearter.dk/om-allearter/hvor-mange-arter-i-dk/" title="Arter, underarter, varieteter m.v. - inklusive ikke-accepterede taxa. Klik for at læse mere.">';
-			echo '<img src="http://allearter-databasen.dk/images/info.png" style="height:10px;">';
-			echo '</a>';
+			echo '<img src="http://allearter-databasen.dk/images/info.png" style="height:10px;" title="Arter, underarter, varieteter m.v. - inklusive ikke-accepterede taxa.">';
 			echo '</td>';
 
 			echo '</tr>';

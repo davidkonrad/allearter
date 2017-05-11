@@ -17,15 +17,15 @@ class Db {
 	public function __construct() { 
 		$host = $_SERVER["SERVER_ADDR"]; 
 		if (($host=='127.0.0.1') || ($host=='::1')) {
-			$this->database = 'allearter';
+			$this->database = 'bif';
 			$this->hostname = 'localhost';
 			$this->username = 'root';
 			$this->password = 'dadk';
 		
 		} else {
-			$this->database = 'allearte_allearter';
-			$this->hostname = 'db14.meebox.net';
-			$this->username = 'allearte';
+			$this->database = 'allearter_databasen_dk_db';
+			$this->hostname = 'mysql59.unoeuro.com';
+			$this->username = 'allearter_d_dk';
 			$this->password = 'i5e1SgH0j8';
 		}
 

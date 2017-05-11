@@ -1,2 +1,0 @@
-[24-Feb-2014 22:35:33 Europe/Berlin] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/allearte/public_html/common/Db.php on line 71
-[24-Feb-2014 22:35:33 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in /home/allearte/public_html/obvious/index.php on line 176

@@ -11,7 +11,7 @@ include('Hierarki.php');
 include('Referencer.php');
 
 $get = (isset($_GET['get'])) ? $_GET['get'] : '';
-$query = (isset($_GET['query'])) ? $_GET['query'] : '';
+$query = (isset($_GET['query'])) ? urldecode($_GET['query']) : '';
 
 header('Content-type: application/json');
 

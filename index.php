@@ -12,8 +12,8 @@ $meta=new Meta();
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <meta name="description" content="<? echo $meta->getMetaDesc();?>" />
 <link rel="shortcut icon" type="image/x-icon" href="http://allearter.dk/grafik/images/favicons/favicon_fa.ico" /> 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 <script type="text/javascript" language="javascript" src="DataTables-1.9.1/media/js/jquery.dataTables.js"></script> 
 <link rel="stylesheet" href="DataTables-1.9.1/media/css/jquery.dataTables.css" type="text/css" media="screen" />
