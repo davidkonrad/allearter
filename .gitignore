@@ -2,7 +2,9 @@
 /DataTables*
 error_log
 ajax/debug.txt
-/db-backup
+db-backup
+
+
 
 
 
