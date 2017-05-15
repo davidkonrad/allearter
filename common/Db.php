@@ -101,9 +101,12 @@ class Db {
 
 	protected function fileDebug($text) {
 		$file = "debug.txt";
-		$fh = fopen($file, 'a') or die("can't open file");
-		fwrite($fh, $text."\n");
-		fclose($fh);
+		try {
+			$fh = fopen($file, 'a') or die("can't open file");
+			fwrite($fh, $text."\n");
+			fclose($fh);
+		} catch (Exception $e) {
+		}
 	}
 
 	public function crlf($string) {

@@ -87,6 +87,7 @@ button::-moz-focus-inner {
 	width:460px;
 	font-size: 18px;
 	padding: 8px;
+	padding-left: 12px;
 	margin-bottom: 3px;
 	outline: 0;
 }
@@ -173,7 +174,7 @@ fieldset .info {
 	position: relative;
 	top: -9px;
 	left: 275px;
-	background-image : url(images/info.png);
+	background-image : url(../images/info.png);
 	background-size: 10px 10px;
 	background-repeat: no-repeat;
 	cursor: pointer;

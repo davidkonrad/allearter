@@ -31,7 +31,9 @@ function downloadDlg() {
 		events: {
 			// Hide the tooltip when any buttons in the dialogue are clicked
 			render: function(event, api) {
-				$('#cancel-download', api.elements.content).click(api.hide);
+				$('#cancel-download', api.elements.content).click(function() {
+					api.hide();
+				});
 			}
 		}
 	});

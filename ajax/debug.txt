@@ -1,0 +1,13 @@
+select distinct Rige from allearter where Rige like "a%" and  1=1  order by Rige asc
+select distinct Slaegt from allearter where Slaegt like "a%" and  1=1  and Rige="Animalia" order by Slaegt asc
+select distinct Familie from allearter where Slaegt="Abgrallaspis"
+select distinct Orden from allearter where Familie="Diaspididae"
+select distinct Klasse from allearter where Orden="Hemiptera"
+select distinct Raekke from allearter where Klasse="Insecta"
+select distinct Rige from allearter where Raekke="Arthropoda"
+select distinct Slaegt from allearter where Slaegt like "a%" and  1=1  order by Slaegt asc
+select distinct Familie from allearter where Slaegt="Abietinella"
+select distinct Orden from allearter where Familie="Thuidiaceae"
+select distinct Klasse from allearter where Orden="Hypnales"
+select distinct Raekke from allearter where Klasse="Bryopsida"
+select distinct Rige from allearter where Raekke="Bryophyta"
