@@ -82,50 +82,56 @@ function initResult() {
 		iDisplayLength: 50,
 		bProcessing: false,
 		bInfo: (taksonomi) ? false : true,
+		/*
 		oColVis: {
 			"buttonText": "&#9660; Vis kolonner"
 		},
+		*/
 		//sDom: 'C<"clear">Rlfrtip', ok
 		//sDom: 'C<"clear">Rlfrtip',
 		//sDom: 'T<"clear"><"H"lfr>t<"F"ip>',
-
-		sDom: 'TC<"clear">R<"H"lpfr>t<"F"i>',
-		//"sDom": 'T<"clear">RClfrtip',
+		//sDom: 'TC<"clear">R<"H"lpfr>t<"F"i>',
+		dom: 'BC<"clear">R<"H"lpfr>t<"F"i>',
 
 		bJQueryUI: true,
-		oLanguage: { "sUrl": "DataTables-1.9.1/danish.txt" },
-		"aoColumns": [ 
-		      {"bVisible": true},  /* Videnskabeligt navn */
-		      {"bVisible": true},  /* autor */
-		      {"bVisible": true},  /* dansk navn */
-		      {"bVisible": true},  /* Familie */
-		      {"bVisible": true},  /* Orden */
-		      {"bVisible": true},  /* Artsgruppe dk */
+		language: { 
+			url: "dataTables/danish.txt" 
+		},
+		columns: [ 
+			{visible: true},  /* Videnskabeligt navn */
+			{visible: true},  /* autor */
+			{visible: true},  /* dansk navn */
+			{visible: true},  /* Familie */
+			{visible: true},  /* Orden */
+			{visible: true},  /* Artsgruppe dk */
 
-		      {"bVisible": false}, /* Familie (dk)  */
-		      {"bVisible": false}, /* Orden (dk) */
-		      {"bVisible": false}, /* Artsgruppe) */
-		      {"bVisible": false}, /* Synonymer */
-		      {"bVisible": false}, /* Synonymer_dk */
-		      {"bVisible": false}, /* Referencenavn */
-		      {"bVisible": false}, /* Reference_aar */
-		      {"bVisible": false}, /* Referencetekst */
-		      {"bVisible": false}, /* Den_danske_roedliste */
-		      {"bVisible": false}, /* Fredede_arter */
-		      {"bVisible": false},  /* Dansk */
-		      {"bVisible": false}  /* Licens */
-	      	],
+			{visible: false}, /* Familie (dk)  */
+			{visible: false}, /* Orden (dk) */
+			{visible: false}, /* Artsgruppe) */
+			{visible: false}, /* Synonymer */
+			{visible: false}, /* Synonymer_dk */
+			{visible: false}, /* Referencenavn */
+			{visible: false}, /* Reference_aar */
+			{visible: false}, /* Referencetekst */
+			{visible: false}, /* Den_danske_roedliste */
+			{visible: false}, /* Fredede_arter */
+			{visible: false},  /* Dansk */
+			{visible: false}  /* Licens */
+		],
 		fnDrawCallback: function (o) {
+			/*
 			var nColVis = $('div.ColVis', o.nTableWrapper)[0];
 			$(nColVis).find("button").removeClass('ColVis_Button TableTools_Button ui-button ui-state-default ColVis_MasterButton');
 			$(nColVis).find("button").addClass("ui-button ui-state-default");
 			$(nColVis).find("button").css('width','110px');
 			nColVis.style.width = "112px";
 			nColVis.style.top = "-1px";
+			*/
 		},
 		fnInitComplete: function(oSettings, json) {
 			adjustHeights();
 		},
+		/*
 		oTableTools: {
 			sSwfPath: "DataTables-1.9.1/extras/TableTools/media/swf/copy_csv_xls_pdf.swf",
 			aButtons: [
@@ -174,6 +180,59 @@ function initResult() {
 				}				
 			]
 		}
+			*/
+		buttons: [
+			{ 
+				extend: "print",
+			  columns: 'visible',
+			  info :  'Click "print" eller ctrl-P for at printe, tryk escape / ESC for at gå tilbage til søgeside',
+			  titleAttr : 'Udskriv søgeresultater'
+			},
+			{ extend: "csvHtml5",
+			  columns: 'visible',
+			  fileName: 'allearter.csv',
+			  fieldSeperator: ";",
+			  titleAttr: 'Gem søgeresultater som CSV fil'
+			},
+			{ 
+				extend: "excelHtml5",
+			  columns: 'visible',
+			  fileName: 'allearter.xls',
+			  titleAttr: 'Gem søgeresultater som fil der kan læses af Excel'
+			},
+			{	
+			  extend: "pdfHtml5",
+			  columns: 'visible',
+			  titleAttr: 'Gem søgeresultater som PDF fil',
+			  PdfOrientation: "landscape",
+			  fnClick: function( nButton, oConfig, flash ) {
+					oConfig.sPdfMessage = 'Overhold venligst brugslicenser angivet for artslisterne, henholdsvis Creative Commons CC BY 4.0 eller CC BY-NC 4.0';
+					flash.setFileName('allearter.pdf');
+					this.fnSetText( flash,
+						"title:"+ this.fnGetTitle(oConfig) +"\n"+
+						"message:"+ oConfig.sPdfMessage +"\n"+
+						"colWidth:"+ this.fnCalcColRatios(oConfig) +"\n"+
+						"orientation:"+ oConfig.sPdfOrientation +"\n"+
+						"size:"+ oConfig.sPdfSize +"\n"+
+						"--/TableToolsOpts--\n" +
+						this.fnGetTableData(oConfig)
+					);
+		    }  
+			},
+			{
+				text: "CSV - samtlige felter",
+				titleAttr: 'Gem søgeresultatet og samtlige bagvedliggende felter fra databasen som CSV',
+				action: function ( e, dt, node, config ) {
+					downloadDlg();
+				}
+			},
+			{
+				extend : 'colvis',
+				titleAttr: 'Skjul eller vis kolonner',
+				text: "Vis kolonner ▼"
+			}
+		]
+
 	});
 
 	$('#search-result td.details').css('background-color','#ffffff');

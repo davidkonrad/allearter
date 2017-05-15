@@ -12,19 +12,24 @@ $meta=new Meta();
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <meta name="description" content="<? echo $meta->getMetaDesc();?>" />
 <link rel="shortcut icon" type="image/x-icon" href="http://allearter.dk/grafik/images/favicons/favicon_fa.ico" /> 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
-<script type="text/javascript" language="javascript" src="DataTables-1.9.1/media/js/jquery.dataTables.js"></script> 
-<link rel="stylesheet" href="DataTables-1.9.1/media/css/jquery.dataTables.css" type="text/css" media="screen" />
-<link rel="stylesheet" href="DataTables-1.9.1/media/css/jquery.dataTables_themeroller.css" type="text/css" media="screen" />
-<script type="text/javascript" src="DataTables-1.9.1/extras/TableTools/media/js/TableTools.min.js"></script> 
-<script type="text/javascript" src="DataTables-1.9.1/extras/ColReorder/media/js/ColReorder.js"></script>
-<script type="text/javascript" src="DataTables-1.9.1/extras/ColVis/media/js/ColVis.js"></script>  
-<link rel="stylesheet" href="DataTables-1.9.1/extras/ColReorder/media/css/ColReorder.css" type="text/css" media="screen" />
-<link rel="stylesheet" href="DataTables-1.9.1/extras/ColVis/media/css/ColVis.css" type="text/css" media="screen" />
-<link rel="stylesheet" href="DataTables-1.9.1/extras/ColVis/media/css/ColVisAlt.css" type="text/css" media="screen" />
-<script type="text/javascript" src="DataTables-1.9.1/extras/ColReorder/media/js/ColReorderWithResize.js"></script> 
+<link rel="stylesheet" type="text/css" href="dataTables/jQueryUI-1.11.4/jquery-ui.css"/>
+<link rel="stylesheet" type="text/css" href="dataTables/jQueryUI-smooth/jquery-ui-1.9.2.custom.css"/>
+<link rel="stylesheet" type="text/css" href="dataTables/Buttons-1.3.1/css/buttons.jqueryui.css"/>
+<link rel="stylesheet" type="text/css" href="dataTables/ColReorder-1.3.3/css/colReorder.jqueryui.css"/>
+<link rel="stylesheet" type="text/css" href="dataTables/DataTables-1.10.15/css/jquery.dataTables_themeroller.css" media="screen" />
+<script type="text/javascript" src="dataTables/JSZip-3.1.3/jszip.js"></script>
+<script type="text/javascript" src="dataTables/pdfmake-0.1.27/build/pdfmake.js"></script>
+<script type="text/javascript" src="dataTables/pdfmake-0.1.27/build/vfs_fonts.js"></script>
+<script type="text/javascript" src="dataTables/DataTables-1.10.15/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="dataTables/DataTables-1.10.15/js/dataTables.jqueryui.js"></script>
+<script type="text/javascript" src="dataTables/Buttons-1.3.1/js/dataTables.buttons.js"></script>
+<script type="text/javascript" src="dataTables/Buttons-1.3.1/js/buttons.jqueryui.js"></script>
+<script type="text/javascript" src="dataTables/Buttons-1.3.1/js/buttons.colVis.js"></script>
+<script type="text/javascript" src="dataTables/Buttons-1.3.1/js/buttons.html5.js"></script>
+<script type="text/javascript" src="dataTables/Buttons-1.3.1/js/buttons.print.js"></script>
+<script type="text/javascript" src="dataTables/ColReorder-1.3.3/js/dataTables.colReorder.js"></script>
 <script type="text/javascript" src="js/autocomplete.js"></script>
 <script type="text/javascript" src="js/counter.js"></script>
 <script type="text/javascript" src="js/jquery.watermark.js"></script>
@@ -48,7 +53,7 @@ echo '<link rel="stylesheet" href="css/statistik.css" type="text/css" media="scr
 <script type="text/javascript">
 var arterCount=<? echo $html->getNumberOfSpecies();?>;
 </script>
-<script type="text/javascript" src="js/allearter.js?ver=2"></script>
+<script type="text/javascript" src="js/allearter.js?ver=3"></script>
 <link rel="stylesheet" href="css/allearter.css" type="text/css" media="screen" />
 
 <script type="text/javascript">
@@ -305,7 +310,7 @@ $(document).ready(function() {
 		Projektansvarlig: Lars Skipper<br>
 		<a href="mailto:lars.skipper@get2net.dk">lars.skipper<!-- @@@ -->@<!-- @@@ -->get2net<!-- nospam -->.<!-- nomorespam -->dk</a><br>
 		Web: David Konrad<br>
-		<a href="mailto:david.konrad@snm.ku.dk">david.konrad<!-- @@@ -->@<!-- @@@ -->snm.ku<!-- nospam -->.<!-- nomorespam -->dk</a><br>
+		<a href="mailto:davidkonrad@gmail.com">davidkonrad<!-- @@@ -->@<!-- @@@ -->gmail<!-- nospam -->.<!-- nomorespam -->com</a><br>
 
 	</address>
     </div>
@@ -341,6 +346,5 @@ $(document).ready(function() {
 <div id="hierarchy-modal"></div>
 
 </div>
-<? $html->divider(25);?>
 </body>
 </html>

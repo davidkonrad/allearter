@@ -1,0 +1,5 @@
+
+* opgraderet dataTables fra 1.9.1 til 1.10.15
+* der bruges ikke længere flash på siden
+
+

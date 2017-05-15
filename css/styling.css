@@ -19,7 +19,7 @@
 }
 th.sorting_asc, th.sorting_desc {
 	background-color: #165AAD;
-	color: white;
+	color: #165AAD; /* gray;*/
 	cursor:pointer;
 	vertical-align: top;
 }
@@ -95,10 +95,6 @@ input[type=text] {
 	font-size: 13px;
 }
 
-#search-result_paginate a {
-	margin-right: 5px;
-}
-
 .DTTT_button {
 	width: 55px;
 }
@@ -166,3 +162,39 @@ input[type=text] {
 	-moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);  
 }
+
+/* 11.05.17 */
+div.dt-buttons {
+	float: none;
+}
+#search-result_wrapper {
+	width: 100% !important;
+	min-width: 100% !important;
+}
+#search-result_length {
+	margin-top: 5px;
+	float: left;
+	clear: none;
+	display: inline-block;
+}
+#search-result_filter {
+	margin-top: 5px;
+	float: none;
+	clear: none;
+	width: auto;
+	text-align: left;
+	display: inline-block;
+}
+#search-result_paginate {
+	position: relative;
+	top: -3px;
+	width: 450px;
+	margin-left: 100px;
+	float: none;
+	clear: none;
+	display: inline-block;
+	text-align: left;
+}
+
+
+

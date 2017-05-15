@@ -146,7 +146,7 @@ Klik på "Vis kolonner" for markering af de kolonner, der ønskes vist.
 		}
 ?>
 </div>
-<table id="search-result" style="width:100%;overflow:visible;">
+<table id="search-result" class="display" style="width:100%;overflow:visible;">
 <thead><tr>
 <th style="width:240px;">Videnskabeligt navn</th>
 <th style="width:150px;">Autor</th>
