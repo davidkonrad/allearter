@@ -19,7 +19,7 @@
 }
 th.sorting_asc, th.sorting_desc {
 	background-color: #165AAD;
-	color: #165AAD; /* gray;*/
+	color: #165AAD; 
 	cursor:pointer;
 	vertical-align: top;
 }
@@ -63,6 +63,7 @@ table#search-result th {
 	font-weight: bold;
 	text-align: left;
 	font-size: 13px;
+	white-space: nowrap;
 }
 
 img.load {
@@ -71,12 +72,6 @@ img.load {
 	left: 45%;
 	width: 100px;
 	margin-top: -33px;
-}
-
-.dataTables_filter {
-	position: relative;
-	float:right;
-	width:300px;
 }
 
 .dataTables_wrapper {
@@ -93,10 +88,6 @@ input[type=text] {
 	padding: 4px;
 	border: 1px solid #aaa;
 	font-size: 13px;
-}
-
-.DTTT_button {
-	width: 55px;
 }
 
 #forvl_mode {

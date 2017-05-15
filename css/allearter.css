@@ -1,10 +1,4 @@
 /* download all as CSV */
-/*
-#ToolTables_search-result_4 {
-	width: 160px;
-	display: none;
-}
-*/
 button.history-down {
 	margin: 0px;
 	background-color: #ebebeb;
@@ -75,15 +69,7 @@ button::-moz-focus-inner {
 	border-left: 1px solid #CCC;
 	border-top: none;
 	overflow: auto;
-	background: #fff url(http://danbif.dk/allearter/grafik/topkollage.jpg/) no-repeat right top;
-}
-#snm-top {
-	position: absolute;
-	left: 470px;
-	top: 0px;
-	width: 514px;
-	height: 86px;
-	background-image: url(http://danbif.dk/allearter/grafik/topkollage.jpg/);
+	background: #fff url(http://allearter.dk/grafik/topkollage.jpg/) no-repeat right top;
 }
 #redbar {
 	position: relative;
@@ -155,8 +141,7 @@ div#footer, .copyright {
 #footer {
 	clear: both;
 	margin: 0;
-	padding: 1.21951219512195% 0 0 22.05284552845528%;
-	width: 77.94715447154472%;
+	padding: 40px 0 0 40px;
 }
 #footer {
 	color: #777;
@@ -164,7 +149,7 @@ div#footer, .copyright {
 }
 div#footer-col-right {
 	padding-bottom: 6px;
-	padding-right: 272px;
+	padding-right: 40px;
 	clear: right;
 }
 div#footer-col-right {

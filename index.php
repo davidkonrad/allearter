@@ -5,7 +5,7 @@ $html=new HTML();
 $meta=new Meta();
 ?>
 <!doctype html>
-<html>
+<html lang="da">
 <head> 
 <meta http-equiv="x-ua-compatible" content="IE=Edge"/>
 <title><? echo $meta->getTitle();?></title>
@@ -14,6 +14,7 @@ $meta=new Meta();
 <link rel="shortcut icon" type="image/x-icon" href="http://allearter.dk/grafik/images/favicons/favicon_fa.ico" /> 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
 <link rel="stylesheet" type="text/css" href="dataTables/jQueryUI-1.11.4/jquery-ui.css"/>
 <link rel="stylesheet" type="text/css" href="dataTables/jQueryUI-smooth/jquery-ui-1.9.2.custom.css"/>
 <link rel="stylesheet" type="text/css" href="dataTables/Buttons-1.3.1/css/buttons.jqueryui.css"/>
@@ -30,6 +31,15 @@ $meta=new Meta();
 <script type="text/javascript" src="dataTables/Buttons-1.3.1/js/buttons.html5.js"></script>
 <script type="text/javascript" src="dataTables/Buttons-1.3.1/js/buttons.print.js"></script>
 <script type="text/javascript" src="dataTables/ColReorder-1.3.3/js/dataTables.colReorder.js"></script>
+
+<link rel="stylesheet" href="js/jquery.qtip.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/menu.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/ui-styling.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/styling.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/details.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/downloadPopup.css" type="text/css" media="screen" />
+
 <script type="text/javascript" src="js/autocomplete.js"></script>
 <script type="text/javascript" src="js/counter.js"></script>
 <script type="text/javascript" src="js/jquery.watermark.js"></script>
@@ -38,13 +48,7 @@ $meta=new Meta();
 <script type="text/javascript" src="js/cookie.js"></script>
 <script type="text/javascript" src="js/history.js"></script>
 <script type="text/javascript" src="js/hints.js"></script>
-<link rel="stylesheet" href="js/jquery.qtip.css" type="text/css" media="screen" />
-<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
-<link rel="stylesheet" href="css/menu.css" type="text/css" media="screen" />
-<link rel="stylesheet" href="css/ui-styling.css" type="text/css" media="screen" />
-<link rel="stylesheet" href="css/styling.css" type="text/css" media="screen" />
-<link rel="stylesheet" href="css/details.css" type="text/css" media="screen" />
-<link rel="stylesheet" href="css/downloadPopup.css" type="text/css" media="screen" />
+
 <? 
 if (isset($_GET['referencer']) || isset($_GET['artsgruppe-statistik']) || isset($_GET['statistik'])) {
 echo '<link rel="stylesheet" href="css/statistik.css" type="text/css" media="screen" />'."\n";
@@ -72,10 +76,15 @@ _gaq.push(['_trackPageview']);
 <? 
 function buttonPanel() {
 ?>
-<div class="buttonpanel"><br/>
-<button type="button" id="search-btn" class="search" onclick="Search.searchSubmit();" title="Søg"><img src="images/search.png" alt="Søg" style="margin-top:3px;"/>&nbsp;S&oslash;g&nbsp;</button>
-<button type="button" id="search-reset" class="search" onclick="reset();" title="Nulstil søgekriterier">&nbsp;<img src="images/reset.png" alt="Nulstil" style="margin-top:3px;"/>&nbsp;</button>
-<br/>
+<div class="buttonpanel">
+	<br>
+	<button type="button" id="search-btn" class="search" onclick="Search.searchSubmit();" title="Søg">
+		<img src="images/search.png" alt="Søg" style="margin-top:3px;"/>&nbsp;S&oslash;g&nbsp;
+	</button>
+	<button type="button" id="search-reset" class="search" onclick="reset();" title="Nulstil søgekriterier">
+		&nbsp;<img src="images/reset.png" alt="Nulstil" style="margin-top:3px;"/>&nbsp;
+	</button>
+	<br>
 </div>
 <?
 }
@@ -90,7 +99,7 @@ function buttonPanel() {
 	</div>
 	<div style="position:relative;float:left;left:60px;clear:none;top:0px;">
 		<a href="http://allearter.dk/" title="Projekt Allearter">
-			<img src="http://allearter.dk/grafik/navnetraek.gif">
+			<img src="http://allearter.dk/grafik/navnetraek.gif" alt="Projekt allearter">
 		</a>
 	</div>
 
@@ -288,36 +297,36 @@ $(document).ready(function() {
 }
 ?>
 
-</div></div>
+	</div> 
 
-<? $html->divider(75);?>
+<? $html->divider(50);?>
 
-<div id="footer">
-	<div id="footer-col-left">
-		<address>
-			<a href="http://www.danbif.dk/">DanBIF - Danish Biodiversity Information Facility c/o Statens Naturhistoriske Museum</a><br>
-			<a href="http://www.ku.dk/">Københavns Universitet</a>
-			<br>
-			Universitetsparken 15, 2100 København Ø
-			<br>
-		</address>
+	<div id="footer">
+		<div id="footer-col-left">
+			<address>
+				<a href="http://www.danbif.dk/">DanBIF - Danish Biodiversity Information Facility c/o Statens Naturhistoriske Museum</a><br>
+				<a href="http://www.ku.dk/">Københavns Universitet</a>
+				<br>
+				Universitetsparken 15, 2100 København Ø
+				<br>
+			</address>
+		</div>
+		<!-- End footer-col-left -->
+		<br style="display: none;">
+		<div id="footer-col-right">
+			<code>ver. maj 2017.</code>
+			Kontakt:
+			<address>
+				Projektansvarlig: Lars Skipper<br>
+				<a href="mailto:lars.skipper@get2net.dk">lars.skipper<!-- @@@ -->@<!-- @@@ -->get2net<!-- nospam -->.<!-- nomorespam -->dk</a><br>
+				Web: David Konrad<br>
+				<a href="mailto:davidkonrad@gmail.com">davidkonrad<!-- @@@ -->@<!-- @@@ -->gmail<!-- nospam -->.<!-- nomorespam -->com</a><br>
+			</address>
+		</div>
+
+		<!-- End footer-col-right -->
+		<br style="clear: both">
 	</div>
-	<!-- End footer-col-left -->
-	<br style="display: none;">
-	<div id="footer-col-right">
-		Kontakt:
-	<address>
-		Projektansvarlig: Lars Skipper<br>
-		<a href="mailto:lars.skipper@get2net.dk">lars.skipper<!-- @@@ -->@<!-- @@@ -->get2net<!-- nospam -->.<!-- nomorespam -->dk</a><br>
-		Web: David Konrad<br>
-		<a href="mailto:davidkonrad@gmail.com">davidkonrad<!-- @@@ -->@<!-- @@@ -->gmail<!-- nospam -->.<!-- nomorespam -->com</a><br>
-
-	</address>
-    </div>
-
-    <!-- End footer-col-right -->
-	<br style="clear: both">
-</div>
 
 </div>
 
@@ -325,26 +334,27 @@ $(document).ready(function() {
  	<form action="" id="download-form" style="display: none;">
 		<label for="separator">Separator</label>
 		<select id="separator" name="separator">
-		<option value=";" selected="selected">; (semikolon)</option>
-		<option value=",">, (komma)</option>
-		</select><br/>
+			<option value=";" selected="selected">; (semikolon)</option>
+			<option value=",">, (komma)</option>
+		</select>
+		<br>
 		<label for="column">Sorter efter</label>
 		<select id="column" name="column">
-		<? echo $html->getOptionsColumnNames();?>
-		</select><br/>
+			<? echo $html->getOptionsColumnNames();?>
+		</select>
+		<br>
  		<label for="filename">Filnavn</label>
 		<input id="filename" name="filename" value="allearter.csv" type="text" />
  		<span style="float:right;clear:both;border-top:1px solid #ebebeb;width:100%;margin-top:10px;margin-bottom:10px;text-align:right;padding-top:6px;">
-		<input type="button" value="Download" id="begin-download"/>
-		<input type="button" value="Fortryd" id="cancel-download"/>
+			<input type="button" value="Download" id="begin-download"/>
+			<input type="button" value="Fortryd" id="cancel-download"/>
 		</span>
-	</div>
+	</form>
 </div>
 
-<div id="popup-image" style="display:none;">
+<div id="popup-image" style="display:none;"></div>
 
 <div id="hierarchy-modal"></div>
 
-</div>
 </body>
 </html>
