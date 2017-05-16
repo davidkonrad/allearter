@@ -58,14 +58,6 @@ function paramExists(param) {
 	return false
 }
 
-/* now performed serverside
-function linkify(html) {
-	var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-	html=html.replace(exp,"<a target=_blank href='$1'>$1</a>"); 
-	return html;
-}
-*/
-
 function initResult() {
 	var isTaxon = paramExists('taksonomi') || paramExists('taxon');
 	var taksonomi = (isTaxon && ($('#search-result tr').length)==2);
@@ -82,14 +74,6 @@ function initResult() {
 		iDisplayLength: 50,
 		bProcessing: false,
 		bInfo: (taksonomi) ? false : true,
-		/*
-		oColVis: {
-			"buttonText": "&#9660; Vis kolonner"
-		},
-		*/
-		//sDom: 'C<"clear">Rlfrtip', ok
-		//sDom: 'C<"clear">Rlfrtip',
-		//sDom: 'T<"clear"><"H"lfr>t<"F"ip>',
 		//sDom: 'TC<"clear">R<"H"lpfr>t<"F"i>',
 		dom: 'BC<"clear">R<"H"lpfr>t<"F"i>',
 
@@ -118,91 +102,39 @@ function initResult() {
 			{visible: false},  /* Dansk */
 			{visible: false}  /* Licens */
 		],
-		fnDrawCallback: function (o) {
-			/*
-			var nColVis = $('div.ColVis', o.nTableWrapper)[0];
-			$(nColVis).find("button").removeClass('ColVis_Button TableTools_Button ui-button ui-state-default ColVis_MasterButton');
-			$(nColVis).find("button").addClass("ui-button ui-state-default");
-			$(nColVis).find("button").css('width','110px');
-			nColVis.style.width = "112px";
-			nColVis.style.top = "-1px";
-			*/
-		},
 		fnInitComplete: function(oSettings, json) {
 			adjustHeights();
 		},
-		/*
-		oTableTools: {
-			sSwfPath: "DataTables-1.9.1/extras/TableTools/media/swf/copy_csv_xls_pdf.swf",
-			aButtons: [
-				{ "sExtends": "print",
-				  'mColumns':'visible',
-				  "sInfo" : 'Click "print" eller ctrl-P for at printe, tryk escape / ESC for at gå tilbage til søgeside',
-				  "sToolTip" : 'Udskriv søgeresultater'
-				},
-				{ "sExtends": "csv",
-				  'mColumns':'visible',
-				  'sFileName': 'allearter.csv',
-				  'sFieldSeperator': ";",
-				  'sToolTip': 'Gem søgeresultater som CSV fil'
-				},
-				{ "sExtends": "xls",
-				  'mColumns':'visible',
-				  'sFileName': 'allearter.xls',
-				  'sToolTip': 'Gem søgeresultater som fil der kan læses af Excel'
-				},
-				{	
-				  "sExtends": "pdf",
-				  'mColumns':'visible',
-				  'sToolTip': 'Gem søgeresultater som PDF fil',
-				  "sPdfOrientation": "landscape",
-				  "fnClick": function( nButton, oConfig, flash ) {
-						oConfig.sPdfMessage = 'Overhold venligst brugslicenser angivet for artslisterne, henholdsvis Creative Commons CC BY 4.0 eller CC BY-NC 4.0';
-						flash.setFileName('allearter.pdf');
-						this.fnSetText( flash,
-							"title:"+ this.fnGetTitle(oConfig) +"\n"+
-							"message:"+ oConfig.sPdfMessage +"\n"+
-							"colWidth:"+ this.fnCalcColRatios(oConfig) +"\n"+
-							"orientation:"+ oConfig.sPdfOrientation +"\n"+
-							"size:"+ oConfig.sPdfSize +"\n"+
-							"--/TableToolsOpts--\n" +
-							this.fnGetTableData(oConfig)
-						);
-					    }  
-				},
-				{
-				 "sExtends" : "text",
-				 "sButtonText": "CSV - samtlige felter",
-				 'sToolTip': 'Gem søgeresultatet og samtlige bagvedliggende felter fra databasen som CSV',
-				 "fnClick" : function( nButton, oConfig, flash ) {
-						downloadDlg();
-		     }
-				}				
-			]
-		}
-			*/
 		buttons: [
 			{ 
 				extend: "print",
-			  columns: 'visible',
+				exportOptions: {
+					columns: ':visible'
+				},
 			  info :  'Click "print" eller ctrl-P for at printe, tryk escape / ESC for at gå tilbage til søgeside',
 			  titleAttr : 'Udskriv søgeresultater'
 			},
 			{ extend: "csvHtml5",
-			  columns: 'visible',
+				exportOptions: {
+					columns: ':visible'
+				},
 			  fileName: 'allearter.csv',
 			  fieldSeperator: ";",
 			  titleAttr: 'Gem søgeresultater som CSV fil'
 			},
 			{ 
 				extend: "excelHtml5",
-			  columns: 'visible',
+				exportOptions: {
+					columns: ':visible'
+				},
 			  fileName: 'allearter.xls',
 			  titleAttr: 'Gem søgeresultater som fil der kan læses af Excel'
 			},
 			{	
 			  extend: "pdfHtml5",
-			  columns: 'visible',
+				exportOptions: {
+					columns: ':visible'
+				},
 			  titleAttr: 'Gem søgeresultater som PDF fil',
 			  PdfOrientation: "landscape",
 			  fnClick: function( nButton, oConfig, flash ) {
@@ -246,7 +178,6 @@ function initResult() {
 		var url="ajax/details.php?id="+id+'&lang='+$('input[name=sprog]:checked').val();
 		$.get(url, function (response) {
 			var html=response;
-			//html=linkify(html);
 			details = resultTable.fnOpen(tr, html, 'details');
 			var taxon=$("#eol-link-"+id).attr("taxon");
 			var href='http://eol.org/search/?q='+taxon+'&search=Go';
@@ -280,36 +211,6 @@ function initResult() {
 			var i=$.inArray(tr, openDetails);
 			if (i===-1) {
 				doOpenDetails($this)				
-				/*
-				$this.css('border','1px solid #ebebeb');
-				$this.css('background-color','#ebebeb');
-				var url="ajax/details.php?id="+id+'&lang='+$('input[name=sprog]:checked').val();
-				$.get(url, function (response) {
-					var html=response;
-					//html=linkify(html);
-					details = resultTable.fnOpen(tr, html, 'details');
-					var taxon=$("#eol-link-"+id).attr("taxon");
-					var href='http://eol.org/search/?q='+taxon+'&search=Go';
-					$("#eol-link-"+id).attr('href',href);
-					openDetails.push(tr);
-				
-					var eol_img = $(details).find('.eol-image').find('img').attr('src');
-					if (typeof eol_img == 'string') {
-						setTaxonImage(eol_img, id);
-					} else {
-						$("#eol-image-"+id).remove();
-					}
-			
-					adjustHeights();
-					//update .details-cnt height according to .details-item
-					setTimeout(function() {
-						var $details = $(details).find('.details-cnt'),
-								detailsItem = $details.find('.details-item')[0];
-						$(detailsItem).height(detailsItem.scrollHeight);
-						$details.height(detailsItem.scrollHeight);
-					}, 500);
-				});
-				*/
 			} else {
 				//is it the actual taxon link we have clicked on?
 				if ($this.attr('artid')>0) {
@@ -327,7 +228,6 @@ function initResult() {
 
 	if (taksonomi) {
 		doOpenDetails($('#search-result td.details').first())
-		//$('#search-result td.details').last().trigger('click')
 	}
 
 	$("#search-result_length select").on('change', function() {
@@ -465,8 +365,6 @@ function autoLookup(field, value) {
 			valueStoreCallback(new_field, html);
 		},
 		error: function(xhr, ajaxOptions, thrownError){
-      //alert(xhr.status);
-      //alert(thrownError);
     }   
 
 	});
@@ -667,7 +565,6 @@ $(document).ready(function() {
 	$("#hierarchy").click(function(e) {
 		e.preventDefault();
 		e.stopPropagation();
-		//$('html, body').animate({scrollTop:0}, 'fast');
 		$('#hierarchy-modal').dialog({
  			dialogClass: 'klassifikation-hierarchy',
 			title: 'Klassifikations-hierarki',
