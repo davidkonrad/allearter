@@ -180,7 +180,7 @@ function initResult() {
 			var html=response;
 			details = resultTable.fnOpen(tr, html, 'details');
 			var taxon=$("#eol-link-"+id).attr("taxon");
-			var href='http://eol.org/search/?q='+taxon+'&search=Go';
+			var href='https://eol.org/search/?q='+taxon+'&search=Go';
 			$("#eol-link-"+id).attr('href',href);
 			openDetails.push(tr);
 				
@@ -245,7 +245,7 @@ function getSupplierText(url, link) {
 			return '&copy; miridae.dk - Danmarks Blomstertæger';
 		} else {
 			var text="&copy;&nbsp;";
-			text+='<a href="http://www.miridae.dk/" target=_blank title="Danmarks Blomstertæger" style="color:gray;text-decoration:none;"><b style="color:teal;">miridae.dk</b> - Danmarks Blomstertæger</a><br>';
+			text+='<a href="https://www.miridae.dk/" target=_blank title="Danmarks Blomstertæger" style="color:gray;text-decoration:none;"><b style="color:teal;">miridae.dk</b> - Danmarks Blomstertæger</a><br>';
 			return text;
 		}
 	} else {

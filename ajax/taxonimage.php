@@ -45,6 +45,8 @@ class Image extends Db {
 			if (preg_match('/content\d+/', $url, $match)) {
 				$url = str_replace($match[0], 'media', $url);
 			}
+			//fix old http urls
+			$url = str_replace('http:', 'https:', $url);
 			return $url;
 		} else {
 			$this->createFail();

@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+RewriteBase /
+RewriteCond %{HTTP_HOST} !allearter-databasen.dk$ [NC]
+RewriteRule ^(.*)$ http://allearter-databasen.dk/$1 [L,R=301] 
+
+AddType application/x-httpd-php-old .php
+
+Options +Indexes

@@ -111,7 +111,7 @@ class Details extends Db {
 		}
 
 		//01.02.2015
-		$href='http://www.gbif.org/species/search?q='.str_replace(' ', '+', $row['Videnskabeligt_navn']);
+		$href='https://www.gbif.org/species/search?q='.str_replace(' ', '+', $row['Videnskabeligt_navn']);
 		$href='<a href="'.$href.'" target=_blank style="float:left;margin-top:3px;" title="GBIF - Global Biodiversity Information Facility">Se arten på GBIF</a>';
 		$html.=$this->item($href,'');
 
@@ -227,11 +227,12 @@ class Details extends Db {
 		$SQL='select * from taxon_image where taxon="'.$taxon.'"';
 		$row=$this->getRow($SQL);
 		if (is_array($row) && $this->isImage($row['url'])) {
-			//09.12.2015 coreect bad eol.org images, replace contentXX with media
+			//09.12.2015 correct bad eol.org images, replace contentXX with media
 			$img = $row['url'];
 			if (preg_match('/content\d+/', $img, $match)) {
 				$img = str_replace($match[0], 'media', $img);
 			}
+			$img = str_replace('http:', 'https:', $img);
 			$ret.='<img src="'.$img.'" class="details-image"></span>';
 		} else {
 			$ret.='</span>';
@@ -264,7 +265,7 @@ class Details extends Db {
 				return '';
 			}
 		} else {
-			$url='http://www.catalogueoflife.org/annual-checklist/2012/webservice';
+			$url='https://www.catalogueoflife.org/annual-checklist/2012/webservice';
 			$url.='?name='.$taxon;
 			$url.='&format=php';
 
@@ -294,7 +295,7 @@ class Details extends Db {
 		$row=$this->getRow($SQL);
 		if (isset($row['taxaID'])) {
 			//return 'http://www.nobanis.org/speciesInfo.asp?taxaID='.$row['taxaID'];
-			return 'http://www.nobanis.org/NationalInfo.asp?countryID=DK&taxaID='.$row['taxaID'];
+			return 'https://www.nobanis.org/NationalInfo.asp?countryID=DK&taxaID='.$row['taxaID'];
 		}
 		return '';
 	}
@@ -304,7 +305,7 @@ class Details extends Db {
 		$row=$this->getRow($SQL);
 		if (isset($row['factSheet']) && $row['factSheet']!='') {
 			$f=str_replace(' ', '%20', $row['factSheet']);
-			return 'http://www.nobanis.org/files/factsheets/'.$f;
+			return 'https://www.nobanis.org/files/factsheets/'.$f;
 		}
 		return '';
 	}
@@ -320,7 +321,7 @@ class Details extends Db {
 	private function getGallery($taxon) {
 		//limit to max 15 images ordered random
 		$SQL='select * from image_galleries where taxon="'.$taxon.'" order by rand() limit 15';
-		//imit 15 order by rand(), meta_provider_name';
+
 		$result = $this->query($SQL);
 		if (mysql_num_rows($result)<=0) return '';
 
@@ -331,15 +332,23 @@ class Details extends Db {
 
 			if (!in_array($row['meta_provider_name'], $providers)) $providers[] = $row['meta_provider_name'];
 
+			//06.11.2017 fix https
+			$url = $row['image_url'];
+			if (!strpos($url, 'biopix')) {
+				//convert stored http refs to https, except biopox which does not support https
+				$url = str_replace('http:', 'https:', $url);
+			}
+			$image = '&quot;'.$url.'&quot;';
+
 			$slogan = '&quot;'.$row['meta_provider_slogan'].'&quot;';
-			$image = '&quot;'.$row['image_url'].'&quot;';
+			//$image = '&quot;'.$row['image_url'].'&quot;';
 			$photo = ($row['meta_provider_photographer']!='') 
 				? '&quot;/&nbsp;'.$row['meta_provider_photographer'].'&quot;'
 				: '&quot;&quot;';
 			$link = '&quot;'.$row['meta_provider_url'].'&quot;';
 			$title = '"'.$row['meta_provider_name'].' - klik for at se stor version"';
 			$click = '"popupImage('.$image.','.$provider.','.$slogan.','.$link.','.$photo.');"';
-			$html.='<img class="gallery-image" title='.$title.' onclick='.$click.' src="'.$row['image_url'].'"'.$title.'>';
+			$html.='<img class="gallery-image" title='.$title.' onclick='.$click.' src="'.$url.'"'.$title.'>';
 		}
 		$providers = implode(' samt ', $providers);
 		$html = '<sup>Følgende fotos er stillet til rådighed af '.$providers.'</sup>'. $html;

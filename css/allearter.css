@@ -63,13 +63,13 @@ button::-moz-focus-inner {
 	max-width: 984px;
 	margin-left: auto;
 	margin-right: auto;
-	xxmargin-top: 2em;
 	border-right: 1px solid #CCC;
 	border-bottom: 1px solid #CCC;
 	border-left: 1px solid #CCC;
 	border-top: none;
 	overflow: auto;
-	background: #fff url(http://allearter.dk/grafik/topkollage.jpg/) no-repeat right top;
+	__background: #fff url(http://allearter.dk/grafik/topkollage.jpg/) no-repeat right top;
+	background: #fff url(../images/topkollage.jpg) no-repeat right top;
 }
 #redbar {
 	position: relative;

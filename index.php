@@ -11,7 +11,10 @@ $meta=new Meta();
 <title><? echo $meta->getTitle();?></title>
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <meta name="description" content="<? echo $meta->getMetaDesc();?>" />
+<!--
 <link rel="shortcut icon" type="image/x-icon" href="http://allearter.dk/grafik/images/favicons/favicon_fa.ico" /> 
+-->
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon_fa.ico" /> 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 
@@ -94,12 +97,12 @@ function buttonPanel() {
 
 	<div style="position:relative;left:20px;width:40px;top:6px;float:left;clear:none;height:120px;">
 		<a href="http://allearter.dk/" title="Projekt Allearter">
-			<img src="http://cms.ku.dk/grafik/topgrafik/faelles.gif" alt="Forside">		
+			<img src="images/faelles.gif" alt="Forside">		
 		</a>
 	</div>
 	<div style="position:relative;float:left;left:60px;clear:none;top:0px;">
 		<a href="http://allearter.dk/" title="Projekt Allearter">
-			<img src="http://allearter.dk/grafik/navnetraek.gif" alt="Projekt allearter">
+			<img src="images/navnetraek.gif" alt="Projekt allearter">
 		</a>
 	</div>
 
@@ -108,7 +111,7 @@ function buttonPanel() {
 	<div id="main-content" style="padding-left:20px;">
 		<div id="search-box-simple">
 			<span style="float:left">
-				<a href="http://allearter.dk/" style="text-decoration:none;">&#171;&nbsp;Projekt Allearter Startside</a>
+				<a href="https://allearter.dk/" style="text-decoration:none;">&#171;&nbsp;Projekt Allearter Startside</a>
 			</span>
 			<div style="margin-top:40px;text-align:center;">
 				Søg i Allearter databasen :<br>
@@ -129,7 +132,7 @@ function buttonPanel() {
 				<span style="float:left;">
 					<a href="#" id="show-search-simple" style="text-decoration:none;">&#171;&nbsp;Simpel søgning</a>
 					&nbsp;>&nbsp;
-					<a href="http://allearter.dk/" style="text-decoration:none;">Projekt Allearter Startside</a>
+					<a href="https://allearter.dk/" style="text-decoration:none;">Projekt Allearter Startside</a>
 				</span>
 				<span style="padding-left:104px;">
 					<button id="search-btn" style="width:80px;" onclick="Search.searchSubmit();" title="Søg">&nbsp;S&oslash;g&nbsp;</button>
@@ -304,8 +307,8 @@ $(document).ready(function() {
 	<div id="footer">
 		<div id="footer-col-left">
 			<address>
-				<a href="http://www.danbif.dk/">DanBIF - Danish Biodiversity Information Facility c/o Statens Naturhistoriske Museum</a><br>
-				<a href="http://www.ku.dk/">Københavns Universitet</a>
+				<a href="https://www.danbif.dk/">DanBIF - Danish Biodiversity Information Facility c/o Statens Naturhistoriske Museum</a><br>
+				<a href="https://www.ku.dk/">Københavns Universitet</a>
 				<br>
 				Universitetsparken 15, 2100 København Ø
 				<br>

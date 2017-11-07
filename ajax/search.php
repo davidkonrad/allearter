@@ -105,7 +105,6 @@ class Search extends Db {
 	}
 
 	private function drawHeader() {
-		//echo '<br/>';
 		echo '<div style="float:left;padding-left:20px;">';
 		if ($this->promo==null) {
 			if (empty($_GET)) {
@@ -122,7 +121,6 @@ class Search extends Db {
 				}
 				echo '<br><br>';
 			} else {
-				//echo '<h2>Søgning, antal fundne poster i allearter.dk databasen : <span id="recordcount"></span></h2>';
 				echo '<div style="height:45px;clear:noth;float;leaft;"></div>';
 				if (count($this->records)!=1) {
 					echo '<h2><span id="recordcount"></span> poster fundet i allearter.dk databasen.</h2>';
