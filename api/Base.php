@@ -42,4 +42,5 @@ class Base extends Db {
 		return $JSON;
 	}
 }
+
 ?>

@@ -9,6 +9,7 @@ class Art extends Base {
 		if ($query=='') {
 			$this->getError('Søgetekst ikke defineret');
 		} else {
+			mysql_set_charset('utf8');
 			$this->run($query);
 		}
 	}
@@ -34,11 +35,8 @@ class Art extends Base {
 		$result=$this->query($SQL);
 		$row = mysql_fetch_assoc($result);
 		$JSON='';
-		//while ($row = mysql_fetch_assoc($result)) {
-		//	if ($JSON!='') $JSON.=', ';
-			$row['Billede']=$this->getImage($row['Videnskabeligt_navn']);
-			$JSON.=$this->rowToJSON($row);
-		//}
+		$row['Billede']=$this->getImage($row['Videnskabeligt_navn']);
+		$JSON.=$this->rowToJSON($row);
 		$JSON='{ "allearter" : ['.$JSON.'] }';
 		echo $JSON;
 	}
